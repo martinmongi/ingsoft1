@@ -1,0 +1,151 @@
+\documentclass[spanish, 10pt,a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage[pdftex]{graphicx}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{graphics}
+\usepackage{amsthm}
+\usepackage{subcaption}
+\usepackage{caratula}
+\usepackage{fancyhdr,lastpage}
+\usepackage[paper=a4paper, left=1.4cm, right=1.4cm, bottom=1.4cm, top=1.4cm]{geometry}
+\usepackage[table]{xcolor} % color en las matrices
+\usepackage[font=small,labelfont=bf]{caption} % caption de las figuras en letra mas chica que el texto
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{amsfonts}
+\usepackage{upgreek}
+
+
+\color{black}
+
+%%%PAGE LAYOUT%%%
+\topmargin = -1.2cm
+\voffset = 0cm
+\hoffset = 0em
+\textwidth = 48em
+\textheight = 164 ex
+\oddsidemargin = 0.5 em
+\parindent = 2 em
+\parskip = 3 pt
+\footskip = 7ex
+\headheight = 20pt
+\pagestyle{fancy}
+\lhead{IS1 - Trabajo Pr\'actico 1} % cambia la parte izquierda del encabezado
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}} % cambia la parte derecha del encabezado
+\rfoot{\thepage}
+\cfoot{}
+\numberwithin{equation}{section} %sets equation numbers <chapter>.<section>.<subsection>.<index>
+
+\newcommand{\figurewidth}{1\textwidth}
+
+\newcommand{\tuple}[1]{\ensuremath{\left \langle #1 \right \rangle }}
+\newcommand{\Ode}[1]{\small{$\mathcal{O}(#1)$}}
+
+\input{caratula.tex} 
+\begin{document}
+{ \oddsidemargin = 2em
+	\headheight = -20pt
+	\maketitle
+}
+	\tableofcontents
+	\newpage
+\section{Introducción}
+	El Ministro de Gobierno quiere modificar el Sistema Electoral Nacional y para ello propone instalar en las escuelas máquinas emisoras de sufragios. Junto con esta incorporación se deberá modificar el Sistema del Centro de Cómputos Nacional para que pueda operar con las máquinas.
+
+	El formato de la votación no presenta cambios, es decir, al igual que en el sistema de boletas que se venía utilizando se permitirá votar por categorías o votar en blanco. 
+	
+	Además se busca proveer todos los mecanimos necesarios para asegurar el derecho de voto a todos los Electores. Se considerarán las necesidades de los no videntes y personas con movilidad reducida. 
+
+\subsection{Alcance del software}
+
+\newpage
+\section{Describiendo el problema}
+
+\subsection{Presunciones de dominio}
+\begin{itemize}
+\item Las escuelas tiene las instalaciones necesarias para el acceso de discapacitados
+\item Los presidentes de mesa están capacitados para ayudar durante el voto ante dudas de uso del sistema
+\item Hay un Encargado de las máquinas por zona
+\item Ante falla en máquina de voto, el Encargado de las máquinas solucionará el problema en un tiempo acotado
+\item La cantidad de boletas provistas a cada escuela se corresponde, como mínimo, a la cantidad de Electores
+\item Los electores votan en el horario establecido
+\item Las escuelas tienen cable de red o WIFI para poder comunicarse con los servidores locales y nacionales
+\item El día anterior a la votación se realiza la instalación de las máquinas 
+\end{itemize}
+
+\subsection{Requerimientos}
+\begin{itemize}
+\item El Elector puede votar una única vez
+\item Para poder, votar el Elector debe aparecer en el Padrón de la escuela
+\item El voto se realiza de a un Elector por vez
+\item Manejar correctamente la situación en la que el Elector presenta alguna discapacidad o es no vidente
+\item El Presidente de mesa y los Fiscales no utilizan la máquina durante la elección
+\item La máquina permite realizar el voto si la boleta fue insertada
+\item Las máquinas tienen conexión a internet
+\item Las máquinas se actualizan el día anterior
+\item La batería de las máquinas inicia el día con la carga completa
+\end{itemize}
+
+\subsection{Principales alternativas}
+
+\section{Casos hipotéticos}
+
+Agregamos unos casos hipotéticos en los cuales aparecerán los agentes y objetivos de una manera más definida a fin de entender mejor el sistema que planteamos.
+
+\subsection{Curso de una votación estándar}
+	El Elector averigua el lugar en donde le corresponde votar y el día de la votación concurre a la escuela que le fue asignada. Una vez ahí se presenta y anuncia en la mesa. El Presidente de Mesa y Fiscales comprueban los datos, le entregan un ticket y le permiten dirigirse a la máquina emisora de sufragio. 
+
+	Para poder realizar el voto, el Elector ingresa en ticket único en la máquina y a partir de allí comenzará a elegir los candidatos. Una vez que navegó por las categorías o eligió lista completa podrá  realizar un clic en "finalizar votación". A continuación se imprimirá, en el ticket antes ingresado, los datos de los candidatos elegidos. El Elector podrá confirmar que sus elecciones se corresponden con lo presente en el ticket pasando el mismo por el lector que se encuentra en la máquina. Como la información esta correcta procede al paso siguiente.
+
+	Con el ticket impreso en mano se presenta nuevamente en la mesa y lo ingresa en la urna.	
+	
+\subsection{Incorrecta elección de candidatos}
+	Siguiendo el ejemplo anterior, el Elector realiza la misma votación. Una vez terminada, decide confirmar su voto haciendo uso del lector. Allí se da cuenta que los datos que el ingresó no son lo que quería, es decir, su intención de voto no se ve reflejada en el ticket. Luego, se acerca a la mesa y explica lo sucedido. El Presidente de Mesa rompe el ticket con los datos incorrectos y le entrega uno nuevo. El Elector vuelve a repetir el proceso y finaliza como el caso anterior. 
+
+\subsection{Incorrecto funcionamiento de la máquina}
+	Durante el proceso de votación al Elector se le presenta un problema: la máquina no funciona correctamente. Luego de dar conocimiento de lo sucedido al Presidente de Mesa, éste último se comunicará con el Encargado de Máquinas quien concurrirá en un tiempo razonable a reparar la misma. 
+
+	Mientras y hasta que se solucione el inconveniente, se ingresará en el cuarto donde ocurrió el problema una nueva máquina para que el Elector pueda realizar su voto. 
+
+\subsection{Elector discapacitado}
+	Como las escuelas cuentan con las instalaciones necesarias para el acceso de cualquier persona, el Elector con discapacidad puede ingresar al establecimiento sin problemas. Una vez allí pueden ocurrir dos escenarios: su mesa se encuentra a su alcance (esta en planta baja) o no.
+	
+	Si se encuentra en el primer caso, realiza el voto de manera estándar sin complicaciones. 
+	
+	Si se encuentra en el segundo deberá avisar al Presidente de mesa más cercano de la situación. Luego, se avisará en la mesa que le corresponde y el Presidente bajará con la urna hacia el cuarto especialmente preparado para esta situación.	Este cuarto se encuentra en planta baja por lo que el Elector podrá acceder cómodamente. Antes de que el Elector pueda acercase a la máquina, el Presidente de Mesa ingresará el número de mesa correspondiente en la misma. Esto es necesario dado que el conteo de votos se realiza primero por mesa, luego por escuela y por último en la totalidad. Entonces, como este cuarto es para uso de discapacitados que pueden pertenecer a diferentes mesas, la máquina que allí se encuentra sumará votos de distintas mesas si no se indica lo contrario. A continuación el Elector procede a votar normalmente.
+
+\subsection{Elector no vidente}
+
+	En este caso, cuando el Elector se presenta en la mesa se le entregan unos auriculares. Éstos servirán para guiarlo durante el proceso de votación indicando los movimientos a realizar y la ubicación de los candidatos en la pantalla.
+
+\newpage
+\section{Vistas}
+\subsection{Diagrama de Contexto}
+
+%\begin{figure}[H]
+%  \centering
+%  \includegraphics[scale=0.50]{pdf/Diagrama_de_Contexto}
+%  \caption{}
+%  \label{fig:DiagramaDeContexto}
+%\end{figure}
+
+\subsection{Diagrama de Objetivos}
+
+\newpage
+\section{Conclusión}
+	\newpage
+	%~ \newpage
+	%~ \bibliographystyle{plain}
+	%~ \clearpage
+	%~ \bibliography{bibliography}
+	%~ \addcontentsline{toc}{section}{Referencias}
+\end{document}
+
