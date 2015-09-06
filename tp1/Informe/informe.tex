@@ -131,6 +131,12 @@ Agregamos unos casos hipotéticos en los cuales aparecerán los agentes y objeti
 \section{Vistas}
 \subsection{Diagrama de Contexto}
 
+\begin{itemize}
+\item La relación \textit{Se presenta a votar} entre el \textit{Elector} y el \textit{Presidente de Mesa} engloba, además del caso estándar, que el \textit{Elector} sea discapacitado, por lo que dando el aviso al \textit{Presidente de Mesa}, para que el último baje la urna, seleccione el número de mesa en la máquina de votación y entregue la boleta con la que el \textit{Elector} votará (englobado en la relación \textit{Habilita a votar entregando boleta vacía}).
+\item La relación \textit{Votar} entre el \textit{Elector} y \textit{SVE} implica que el \textit{Elector} realice todo el proceso de votación que debe realizar la máquina. Esto implica la inserción de la boleta en la máquina, la selección de los candidatos a votar, la confirmación de los datos si es deseado y depositar la boleta impresa en la urna.
+\item La relación \textit{Consulta sobre información de Máquina} establecida entre el \textit{Presidente de Mesa} y \textit{SVE}, así como también entre \textit{Fiscales} y \textit{SVE} contienen la consulta sobre los candidatos que ofrece la máquina y, una vez cerrados los comicios, los resultados parciales y totales, ya sea de la máquina como de la votación.
+\item La relación \textit{Actualizar Máquina} dada entre el \textit{SVE} y el \textit{Encargado de Máquinas} representa la descarga de los datos que se utilizarán para los comicios (candidatos, listas, etc). De esta forma, se evitan errores por carga manual.
+\end{itemize}
 %\begin{figure}[H]
 %  \centering
 %  \includegraphics[scale=0.50]{pdf/Diagrama_de_Contexto}
