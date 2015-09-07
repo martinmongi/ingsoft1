@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.6)  6 SEP 2015 20:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.6)  6 SEP 2015 23:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1488,17 +1488,13 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 217.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 217.
 Package rerunfilecheck Info: File `informe.out' has not changed.
 (rerunfilecheck)             Checksum: C0899FBC36864DE92588440F2FEAB7F9;1160.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 217.
  ) 
 Here is how much of TeX's memory you used:
- 12533 strings out of 493304
- 178686 string characters out of 6139872
- 310393 words of memory out of 5000000
- 15788 multiletter control sequences out of 15000+600000
+ 12534 strings out of 493304
+ 178704 string characters out of 6139872
+ 310974 words of memory out of 5000000
+ 15789 multiletter control sequences out of 15000+600000
  10086 words of font info for 38 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  42i,12n,43p,797b,494s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1514,7 +1510,7 @@ fonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.
 pfb>
-Output written on informe.pdf (9 pages, 587289 bytes).
+Output written on informe.pdf (9 pages, 588701 bytes).
 PDF statistics:
  194 PDF objects out of 1000 (max. 8388607)
  165 compressed objects within 2 object streams
