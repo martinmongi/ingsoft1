@@ -128,6 +128,17 @@ Agregamos unos casos hipotéticos en los cuales aparecerán los agentes y objeti
 
 	En este caso, cuando el Elector se presenta en la mesa se le entregan unos auriculares. Éstos servirán para guiarlo durante el proceso de votación indicando los movimientos a realizar y la ubicación de los candidatos en la pantalla.
 
+\section{Métodos de autenticación}
+
+	Nuestro sistema de votación electrónico, deberá contar con algún método a través del cual asegurarse que no se emitan sufragios ilegítimos (por ejemplo, que un elector vote dos veces o que vote alguien que no estaba en el padrón). Para esto, en nuestro diagrama de objetivos tenemos un o-refinamiento, en el cual planteamos varias formas de autenticación: 
+
+	\begin{itemize}
+
+		\item El Presidente de Mesa le otorga una boleta al Elector, la cual la Máquina imprime y devuelve al Elector. Luego, este deposita la boleta ya impresa en la urna. Este método tiene la ventaja de ser más económico, ya que la máquina de votación no tiene otros requerimientos de hardware que la impresora. Sin embargo, es imposible para el conteo interno de la máquina comprobar que no haya habido fraude, por lo tanto los conteos provisorios podrían ser inexactos, ya que dependen exclusivamente del conteo por software.
+		\item El Presidente de Mesa le otorga una boleta al Elector, el cual la coloca en la Máquina. Luego, esta le pide que se autentique. Dicha autenticación se lleva a cabo de a través de métodos biométricos, a través del cual se verifica la identidad del elector, que pertenezca al padrón de la Mesa y que no haya votado previamente. Si es autenticado, la Máquina le permite sufragiar, imprime la boleta y se la devuelve al Elector. Este método tiene la ventaja de que el fraude es improbable. Sin embargo, tiene el costo agregado de que cada Máquina debe contar con un sensor biométrico del tipo elegido. Hay varios tipos de autenticación biométrica, que varían en seguridad y costo de implementación. Para nuestro método consideraremos el que autentica a través de las huellas dactilares, aprovechando que PJN ya cuenta con esa base de datos, y que provee un nivel aceptable de seguridad y costo.
+	\end{itemize}
+
+
 \newpage
 \section{Vistas}
 \subsection{Diagrama de Contexto}
