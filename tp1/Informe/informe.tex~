@@ -117,19 +117,6 @@ Agregamos unos casos hipotéticos en los cuales aparecerán los agentes y objeti
 
 	Mientras y hasta que se solucione el inconveniente, la mesa se moverá para hacer uso de las máquinas extras que se encuentran en la planta baja  (mismas en las que votarán los Electores con discapacidad). En las mismas,  el Presidente de Mesa seleccionará la mesa que corresponde y el Elector podrá votar con normalidad.
 
-\subsection{Ubicación de los candidatos en la pantalla de la maquina de sufragios}
-Por otro lado tenemos 3 posibilidades para la implementación sobre la ubicación de los partidos/candidatos en la pantalla. Para todos los casos la ubicación de los candidatos/partidos es aleatoria para evitar que se pueda deducir a quien está votando el elector:
-
-\begin{itemize}
-
-\item Primero seleccionar el partido que se desea votar y luego al candidato (los tamaños son iguales para todos). Esta opción suele perjudicar a aquellos candidatos cuyos nombres son más conocidos que el partido al que pertenecen. Debido a esto, un elector ante esta situación no sabe que partido seleccionar para poder encontrar al candidato que decidio elegir. Por esta razón, si se quiere ofrecer que sea parejo para todos los candidatos, esta modalidad no es la mejor.
-
-\item La segunda opción que ofrecemos es la totalidad de los candidatos en pantalla, aumentando el tamaño cuanto menor es la popularidad del candidato (en caso de empate, se repartirán con la aleatoridad no se beneficiará más a uno que a otro). Esta modalidad resultar ser más beneficiosa para aquellos candidatos que son menos conocidos y/o populares. Por lo tanto esta opción  brinda una igualdad relativa, pero probablemente no preferida por los partidos mas populares, para todos los candidatos (a pesar de mostrarse todos en pantalla).
-
-\item La última opción que ofrecemos es la totalidad de los candidatos en pantalla, con igual tamaño (en caso de ser varios, se repartirán en más de una pantalla pero con la aleatoridad no se beneficiará más a uno que a otro). Esta modalidad resulta ser la mas beneficiosa, entre las presentadas, ya que al tamaño al ser igual para todos y además la totalidad de los candidatos esta en pantalla al mismo tiempo, no perjudica más a uno que a otro.
-
-\end{itemize}
-
 \subsection{Elector discapacitado}
 	Como las escuelas cuentan con las instalaciones necesarias para el acceso de cualquier persona, el Elector con discapacidad puede ingresar al establecimiento sin problemas. Una vez allí pueden ocurrir dos escenarios: su mesa se encuentra a su alcance (esta en planta baja) o no.
 	
