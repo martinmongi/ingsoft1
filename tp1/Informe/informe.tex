@@ -89,7 +89,7 @@
 \newpage
 \section{Describiendo el problema}
 
-\subsection{Presunciones de dominio}
+\subsection{Hipótesis de Dominio}
 \begin{itemize}
 \item Las escuelas tiene las instalaciones necesarias para el acceso de discapacitados
 \item Los presidentes de mesa están capacitados para ayudar durante el voto ante dudas de uso del sistema
@@ -203,31 +203,18 @@ Por otro lado tenemos 3 posibilidades para la implementación sobre la ubicació
 	Antes de las dos horas, luego del cierre de mesas, se conocerá el resultado final, que también podrá consultarse mediante la web. 
 
 \section{Vistas}
-\subsection{Diagrama de Contexto}
+	Para lograr mayor compresibilidad, los diagramas, tanto de contexto como de objetivos se presentarán en formato digital de forma separada. A la hora de la entrega escrita, se tendrán los diagramas impresos. 
+	A continuación se harán las aclaraciones pertinentes del diagrama de objetivos:
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.50]{pdf/DiagramaDeContexto}
-  \caption{Diagrama de contexto}
-  \label{fig:DiagramaDeContexto}
-\end{figure}
-
-\clearpage
-\includepdf{pdf/DiagramaDeObjetivos.pdf}
-
-\newpage
 \subsection{Notas del Diagrama de Objetivos}
 \begin{itemize}
+	\item En el requerimiento, \textbf{Lograr que Página web solicite información sobre los candidatos a la CCN} : terminamos el refinamiento en ese mismo nodo y dejamos la responsabilidad a la Pagina Web unicamente, aun sabiendo que es un requerimiento previo y necesario que la CCN tenga cargados los candidatos para ofrecerlos a la página web, porque ya lo indicamos en otro sitio del diagrama a la carga de dichos candidatos en la CCN y nos 
+parecio relevante volver a mencionar dicho requerimiento.
+
+	\item  La secretaria electoral de cada provincia brindara la informacion referida al padron y a los candidatos.
+
 	\item En el requerimiento, \textbf{Lograr que Página web solicite información sobre los candidatos a la CCN} : terminamos el refinamiento en ese mismo nodo y dejamos la responsabilidad a la Pagina Web unicamente, aun sabiendo que es un requerimiento previo y necesario que la CCN tenga cargados los candidatos para ofrecerlos a la página web, porque ya lo indicamos en otro sitio del diagrama a la carga de dichos candidatos en la CCN y nos parecio relevante volver a mencionar dicho requerimiento.
-\item  La secretaria electoral de cada provincia brindara la informacion referida al padron y a los candidatos.
-\end{itemize}
-\subsection{Escenario informal}
-
-
-\subsection{Nota del Diagrama de Objetivos}
-
-	En el requerimiento, \textbf{Lograr que Página web solicite información sobre los candidatos a la CCN} : terminamos el refinamiento en ese mismo nodo y dejamos la responsabilidad a la Pagina Web unicamente, aun sabiendo que es un requerimiento previo y necesario que la CCN tenga cargados los candidatos para ofrecerlos a la página web, porque ya lo indicamos en otro sitio del diagrama a la carga de dichos candidatos en la CCN y nos parecio relevante volver a mencionar dicho requerimiento.
-
+	\end{itemize}
 \newpage
 \section{Conclusión}
 	En este trabajo práctico tuvimos un primer acercamiento a un problema desconocido para el grupo. A partir de los distintos diagramas presentados pudimos atacar el pedido de un cliente desde varios puntos distintos a fin de satisfacer las expectativas a medida que ibamos profundizando el conocimiento acerca del problema. También pudimos ver cómo son los primeros pasos para la construcción de un modelo de software.

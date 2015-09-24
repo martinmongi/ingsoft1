@@ -1,7 +1,7 @@
 \BOOKMARK [1][-]{section.1}{Introducci\363n}{}% 1
 \BOOKMARK [2][-]{subsection.1.1}{Alcance del software}{section.1}% 2
 \BOOKMARK [1][-]{section.2}{Describiendo el problema}{}% 3
-\BOOKMARK [2][-]{subsection.2.1}{Presunciones de dominio}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.1}{Hip\363tesis de Dominio}{section.2}% 4
 \BOOKMARK [2][-]{subsection.2.2}{Requerimientos}{section.2}% 5
 \BOOKMARK [2][-]{subsection.2.3}{Principales alternativas}{section.2}% 6
 \BOOKMARK [3][-]{subsubsection.2.3.1}{M\351todos de autenticaci\363n}{subsection.2.3}% 7
@@ -17,8 +17,5 @@
 \BOOKMARK [2][-]{subsection.3.9}{Presidente de Mesa o Fiscal perciben algo extra\361o}{section.3}% 17
 \BOOKMARK [2][-]{subsection.3.10}{Resultados parciales}{section.3}% 18
 \BOOKMARK [1][-]{section.4}{Vistas}{}% 19
-\BOOKMARK [2][-]{subsection.4.1}{Diagrama de Contexto}{section.4}% 20
-\BOOKMARK [2][-]{subsection.4.2}{Notas del Diagrama de Objetivos}{section.4}% 21
-\BOOKMARK [2][-]{subsection.4.3}{Escenario informal}{section.4}% 22
-\BOOKMARK [2][-]{subsection.4.4}{Nota del Diagrama de Objetivos}{section.4}% 23
-\BOOKMARK [1][-]{section.5}{Conclusi\363n}{}% 24
+\BOOKMARK [2][-]{subsection.4.1}{Notas del Diagrama de Objetivos}{section.4}% 20
+\BOOKMARK [1][-]{section.5}{Conclusi\363n}{}% 21
