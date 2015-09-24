@@ -67,6 +67,25 @@
 
 \subsection{Alcance del software}
 
+	Relación con los usuarios: 
+\begin{itemize}
+\item El diseño del sistema esta puramente pensado para la inclusión de todos los Electores. Cualquiera, más allá de su condición, podrá ejercer el voto sin problema alguno.
+\item El sistema asegura que el voto se realiza de manera anónima y ningún dato personal del Elector queda registrado en la máquina.
+\end{itemize}
+
+	Relación con el hardware:
+\begin{itemize}
+\item Los usuarios interactúan con el sistema a través de la pantalla táctil. Además se cuenta con auriculares y un sistema de guía por medio de audio para los Electores no videntes.
+\item El sistema no interactúa con sistemas externos.
+\end{itemize}
+
+	Relación con sistemas preexistentes:
+\begin{itemize}	
+\item Se utiliza el Correo para enviar el aviso a los Presidentes de mesa.
+\end{itemize}
+
+	Veremos a lo largo del trabajo estos ítems en detalle.
+	
 \newpage
 \section{Describiendo el problema}
 
@@ -97,15 +116,38 @@
 \end{itemize}
 
 \subsection{Principales alternativas}
+\subsubsection{Métodos de autenticación}
+
+	Nuestro sistema de votación electrónico, deberá contar con algún método a través del cual asegurarse que no se emitan sufragios ilegítimos (por ejemplo, que un elector vote dos veces o que vote alguien que no estaba en el padrón). Para esto, en nuestro diagrama de objetivos tenemos un o-refinamiento, en el cual planteamos varias formas de autenticación: 
+
+	\begin{itemize}
+
+		\item El Presidente de Mesa le otorga una boleta al Elector, la cual la Máquina imprime y devuelve al Elector. Luego, este deposita la boleta ya impresa en la urna. Este método tiene la ventaja de ser más económico, ya que la máquina de votación no tiene otros requerimientos de hardware que la impresora. Sin embargo, es imposible para el conteo interno de la máquina comprobar que no haya habido fraude, por lo tanto los conteos provisorios podrían ser inexactos, ya que dependen exclusivamente del conteo por software.
+		\item El Presidente de Mesa le otorga una boleta al Elector, el cual la coloca en la Máquina. Luego, esta le pide que se autentique. Dicha autenticación se lleva a cabo de a través de métodos biométricos, a través del cual se verifica la identidad del elector, que pertenezca al padrón de la Mesa y que no haya votado previamente. Si es autenticado, la Máquina le permite sufragiar, imprime la boleta y se la devuelve al Elector. Este método tiene la ventaja de que el fraude es improbable. Sin embargo, tiene el costo agregado de que cada Máquina debe contar con un sensor biométrico del tipo elegido. Hay varios tipos de autenticación biométrica, que varían en seguridad y costo de implementación. Para nuestro método consideraremos el que autentica a través de las huellas dactilares, aprovechando que PJN ya cuenta con esa base de datos, y que provee un nivel aceptable de seguridad y costo.
+	\end{itemize}
+
 
 \section{Casos hipotéticos}
 
 Agregamos unos casos hipotéticos en los cuales aparecerán los agentes y objetivos de una manera más definida a fin de entender mejor el sistema que planteamos.
 
-\subsection{Curso de una votación estándar}
-	El Elector averigua el lugar en donde le corresponde votar y el día de la votación concurre a la escuela que le fue asignada. Una vez ahí se presenta y anuncia en la mesa. El Presidente de Mesa y Fiscales comprueban los datos, le entregan un ticket y le permiten dirigirse a la máquina emisora de sufragio. 
+\subsection{Consulta del padrón}
+	Cualquier ciudadano que le corresponda votar en la siguiente fecha de elecciones puede consultar sus datos y lugar designado por dos medios distintos: de forma presencial en cualquier secretaría electoral o a través de la página web. En caso de que los datos sean incorrectos o sus datos no figuren (la persona no se encuentra en el padrón) deberá hacer la denuncia correspondiente en la secretaría y se lo incorporará a la brevedad.
+	
+	Allí mismo también se podrá acceder a información de los candidatos.
 
-	Para poder realizar el voto, el Elector ingresa en ticket único en la máquina y a partir de allí comenzará a elegir los candidatos. Una vez que navegó por las categorías o eligió lista completa podrá  realizar un clic en "finalizar votación". A continuación se imprimirá, en el ticket antes ingresado, los datos de los candidatos elegidos. El Elector podrá confirmar que sus elecciones se corresponden con lo presente en el ticket pasando el mismo por el lector que se encuentra en la máquina. Como la información esta correcta procede al paso siguiente.
+\subsection{Preparación de los espacios de voto y asignación de autoridades de mesa}
+	Las autoridades son avisadas con anticipación que han sido designadas como Presidente de mesa por correo. Dado que es un deber, deberán asistir en el día y horario indicado. Cuando ocurra la votación, ellos son los encargados de dar inicio a las mismas habilitando la máquina correspondiente a su mesa y deshabilitandola cuando finalice.		
+	
+	Un día antes que comience la votación, los Encargados de las Máquinas las preparan y checkean su correcto funcionamiento. Primero deben actualizar los datos y para ello descargan los candidatos correspondientes. Una vez que se encuentran en correcto estado, son llevadas a las escuelas asignadas como sedes de la elección. Allí, estos Encargados revisan y confirman que todo este funcionando como se espera. 
+	
+	Siempre hay máquinas extras disponibles que pueden ser utilizadas para reemplazar alguna otra que no este en condiciones óptimas.
+	
+
+\subsection{Curso de una votación estándar}
+	El Elector averigua el lugar en donde le corresponde votar y el día de la votación concurre a la escuela que le fue asignada. Una vez ahí se presenta y anuncia en la mesa. El Presidente de Mesa y Fiscales comprueban los datos, le entregan una boleta vacía y le permiten dirigirse a la máquina emisora de sufragio. 
+
+	Para poder realizar el voto, el Elector ingresa la boleta única en la máquina y a partir de allí comenzará a elegir los candidatos. Una vez que navegó por las categorías o eligió lista completa podrá  realizar un clic en "finalizar votación". A continuación se imprimirá, en el ticket antes ingresado, los datos de los candidatos elegidos. 
 
 	Con el ticket impreso en mano se presenta nuevamente en la mesa y lo ingresa en la urna.	
 	
@@ -114,7 +156,7 @@ Agregamos unos casos hipotéticos en los cuales aparecerán los agentes y objeti
 
 \subsection{Incorrecto funcionamiento de la máquina}
 	Durante el proceso de votación al Elector se le presenta un problema: la máquina no funciona correctamente. Luego de dar conocimiento de lo sucedido al Presidente de Mesa, éste último se comunicará con el Encargado de Máquinas quien concurrirá en un tiempo razonable a reparar la misma. 
-
+	
 	Mientras y hasta que se solucione el inconveniente, la mesa se moverá para hacer uso de las máquinas extras que se encuentran en la planta baja  (mismas en las que votarán los Electores con discapacidad). En las mismas,  el Presidente de Mesa seleccionará la mesa que corresponde y el Elector podrá votar con normalidad.
 
 \subsection{Ubicación de los candidatos en la pantalla de la maquina de sufragios}
@@ -140,19 +182,18 @@ Por otro lado tenemos 3 posibilidades para la implementación sobre la ubicació
 \subsection{Elector no vidente}
 
 	En este caso, cuando el Elector se presenta en la mesa se le entregan unos auriculares. Éstos servirán para guiarlo durante el proceso de votación indicando los movimientos a realizar y la ubicación de los candidatos en la pantalla.
+	
+	Para que pueda comenzar a elegir los candidatos, el Presidente de Mesa se dirige a la máquina, activa el modo audio y conecta los auriculares. Ahora sí, el Elector puede comenzar. Todo el proceso es acompañado por una grabación que indica en que posición de la pantalla se encuentran los distintos candidatos.
+	
+\subsection{Presidente de Mesa o Fiscal perciben algo extraño}
+	Durante el transcurso del día pueden ocurrir distintas situaciones que presten a duda sobre el funcionamiento de las máquinas. Por ejemplo, un Elector mientras realiza el voto hace maniobras extrañas. En tal caso, tanto los Fiscales como el Presidente de Mesa, pueden interferir luego de que el Elector finalice el voto y consultar en la máquina los candidatos ingresados, la cantidad de votos hasta el momento, resultados parciales y/o finales una vez que se haya cerrado la votación. De esta manera se asegura que no a ocurrido una manipulación de los datos. 
+	
+	Para realizar esta consulta deberán ingresar en la máquina sus boletas especiales que permiten acceso Root. Una vez validada la boleta podrán acceder a estas funciones ocultas y realizar la consulta deseada. 
 
-\section{Métodos de autenticación}
+\subsection{Resultados parciales}
+	Gracias a este nuevo sistema, los resultados se van conociendo durante el transcurso del día de elecciones. Éstos son públicos, es decir, cualquier persona que quiera verlos podrá hacerlo a través de la web en cualquier momento.
+	Antes de las dos horas, luego del cierre de mesas, se conocerá el resultado final, que también podrá consultarse mediante la web. 
 
-	Nuestro sistema de votación electrónico, deberá contar con algún método a través del cual asegurarse que no se emitan sufragios ilegítimos (por ejemplo, que un elector vote dos veces o que vote alguien que no estaba en el padrón). Para esto, en nuestro diagrama de objetivos tenemos un o-refinamiento, en el cual planteamos varias formas de autenticación: 
-
-	\begin{itemize}
-
-		\item El Presidente de Mesa le otorga una boleta al Elector, la cual la Máquina imprime y devuelve al Elector. Luego, este deposita la boleta ya impresa en la urna. Este método tiene la ventaja de ser más económico, ya que la máquina de votación no tiene otros requerimientos de hardware que la impresora. Sin embargo, es imposible para el conteo interno de la máquina comprobar que no haya habido fraude, por lo tanto los conteos provisorios podrían ser inexactos, ya que dependen exclusivamente del conteo por software.
-		\item El Presidente de Mesa le otorga una boleta al Elector, el cual la coloca en la Máquina. Luego, esta le pide que se autentique. Dicha autenticación se lleva a cabo de a través de métodos biométricos, a través del cual se verifica la identidad del elector, que pertenezca al padrón de la Mesa y que no haya votado previamente. Si es autenticado, la Máquina le permite sufragiar, imprime la boleta y se la devuelve al Elector. Este método tiene la ventaja de que el fraude es improbable. Sin embargo, tiene el costo agregado de que cada Máquina debe contar con un sensor biométrico del tipo elegido. Hay varios tipos de autenticación biométrica, que varían en seguridad y costo de implementación. Para nuestro método consideraremos el que autentica a través de las huellas dactilares, aprovechando que PJN ya cuenta con esa base de datos, y que provee un nivel aceptable de seguridad y costo.
-	\end{itemize}
-
-
-\newpage
 \section{Vistas}
 \subsection{Diagrama de Contexto}
 
@@ -163,91 +204,27 @@ Por otro lado tenemos 3 posibilidades para la implementación sobre la ubicació
   \label{fig:DiagramaDeContexto}
 \end{figure}
 
-\begin{itemize}
-\item La relación \textit{Se presenta a votar} entre el \textit{Elector} y el \textit{Presidente de Mesa} engloba, además del caso estándar, que el \textit{Elector} sea discapacitado, por lo que dando el aviso al \textit{Presidente de Mesa}, para que el último baje la urna, seleccione el número de mesa en la máquina de votación y entregue la boleta con la que el \textit{Elector} votará (englobado en la relación \textit{Habilita a votar entregando boleta vacía}).
-\item La relación \textit{Votar} entre el \textit{Elector} y \textit{SVE} implica que el \textit{Elector} realice todo el proceso de votación que debe realizar la máquina. Esto implica la inserción de la boleta en la máquina, la selección de los candidatos a votar, la confirmación de los datos si es deseado y depositar la boleta impresa en la urna.
-\item La relación \textit{Consulta sobre información de Máquina} establecida entre el \textit{Presidente de Mesa} y \textit{SVE}, así como también entre \textit{Fiscales} y \textit{SVE} contienen la consulta sobre los candidatos que ofrece la máquina y, una vez cerrados los comicios, los resultados parciales y totales, ya sea de la máquina como de la votación.
-\item La relación \textit{Actualizar Máquina} dada entre el \textit{SVE} y el \textit{Encargado de Máquinas} representa la descarga de los datos que se utilizarán para los comicios (candidatos, listas, etc). De esta forma, se evitan errores por carga manual.
-\end{itemize}
-
-%\subsection{Diagrama de Objetivos}
 \clearpage
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[scale=0.50]{pdf/Diagrama de objetivos.jpg}
-%   \caption{Diagrama de contexto}
-%   \label{fig:DiagramaDeContexto}
-% \end{figure}
 \includepdf{pdf/DiagramaDeObjetivos.pdf}
-\newpage
+
 \subsection{Nota del Diagrama de Objetivos}
 
 	En el requerimiento, \textbf{Lograr que Página web solicite información sobre los candidatos a la CCN} : terminamos el refinamiento en ese mismo nodo y dejamos la responsabilidad a la Pagina Web unicamente, aun sabiendo que es un requerimiento previo y necesario que la CCN tenga cargados los candidatos para ofrecerlos a la página web, porque ya lo indicamos en otro sitio del diagrama a la carga de dichos candidatos en la CCN y nos parecio relevante volver a mencionar dicho requerimiento.
 
+\newpage
 \section{Conclusión}
-	\newpage
+	En este trabajo práctico tuvimos un primer acercamiento a un problema desconocido para el grupo. A partir de los distintos diagramas presentados pudimos atacar el pedido de un cliente desde varios puntos distintos a fin de satisfacer las expectativas a medida que ibamos profundizando el conocimiento acerca del problema. También pudimos ver cómo son los primeros pasos para la construcción de un modelo de software.
+	
+	Tanto del diagrama de objetivos como el de contexto, sirvieron para establecer una idea más clara de cual debería ser la forma de funcionar del proyecto sin enfocarnos solamente en lo que, en última medida será lo que deberemos implementar, si no a mayor escala como solución a un proyecto. Pudimos ver la relación entre los mismos y destacar distintos conceptos en cada uno.
+
+	Con los casos hipotéticos tratamos de cubrir los distintos escenarios, mostrando nuestras ideas y objetivos a cumplir con los agentes que intervienen en cada una.
+	
+	Por otro lado, también nos acercó a la comunicación con el cliente (en nuestro caso, el tutor) para mitigar dudas y ambiguedades. Se relaciona directamente con el mundo laboral, como parte de metodologías ágiles o desde el trabajo de analista funcional, donde la comunicación con el cliente y entender el problema resulta parte esencial del trabajo. Es por esto que consideramos beneficiosa la utilización de estas metodologías.
+
 	%~ \newpage
 	%~ \bibliographystyle{plain}
 	%~ \clearpage
 	%~ \bibliography{bibliography}
 	%~ \addcontentsline{toc}{section}{Referencias}
-
-\newpage
-\section{Listado de cosas que queremos lograr - PRE ENTREGA}
-
-Dada la característica de pre-entrega, y para que se entienda cuáles son las cosas que queremos lograr para resolver el problema, agregamos el listado de factores que consideramos importantes y cómo nos imaginamos que el sistema funcionará: 
-
-\begin{itemize}
-\item Para el caso de cargos asignados en proporción a los votos conseguidos (diputados por ejemplo) conversión proporcional de votos siguiendo el Método D Hont.
-\item Asignar presidente de Mesa para todas las mesas de todos los lugares de votación del país
-\item Registro y consulta de Resultados parciales y totales, una vez cerrado los comicios
-\item Lograr cambiar sistema de votación.. máquinas emisoras de sufragios
-\item Lograr un mecanismo seguro y transparente
-\item Lograr modificar el sistema del Centro de Cómputos Nacional
-\item Instalar máquinas emisoras de sufragios, una por mesa.
-\item Lograr cargar y consultar el Padrón según el lugar de votación
-\item Cargar y consultar los Candidatos
-\item Se puedan cargar los Candidatos previamente al día del escrutinio
-\item Garantizar que todos los electores puedan ejercer su derecho.
-\item Permitir votar por categorías  / cortar boleta
-\item Permitir votar en blanco
-\item Permitir votar lista completa
-\item Cada Presidente de Mesa puede dar inicio a la elección el día de los comicios, habilitando a los electores que figuren en el padrón de la mesa correspondiente.
-\item El Elector elija candidatos con la garantía irrestricta de que va a poder ejercer su derecho a votar en plenitud.
-\item Se preste asistencia en el momento del escrutinio (es decir, en el conteo de los votos).
-\item Se imprimirá una boleta con la votación realizada.
-\item Se tendrán pantallas táctiles. Alternativas: pantalla tipo cajero con botones con número en braille, pantalla táctil con braille.
-\item Garantizar el derecho a los no videntes o con movilidad reducida. 
-\item Para los que tienen movilidad reducida se situarán máquinas para votar en planta baja en el cual el presidente de mesa ingresará el número de mesa correspondiente a la que debería haber votado.
-\item En caso de los ciegos estará la posibilidad mediante audio con auriculares para mantener el secreto del voto.
-\item En el caso de ruptura de una máquina, se utilizará el mismo medio que los discapacitados hasta que la misma se arregle.
-\item Minimizar o mitigar los errores.
-\item Minimizar errores humanos.
-\item Al final de proceso de votación se le mostrará al elector todas sus elecciones.
-\item Minimizar errores técnicos (plantear diferentes métodos de conteo transmisión y carga de datos)
-\item Contar con una estrategia de sincronización para la transmisión de datos de todas las máquinas distribuidas por el país.
-\item Auditar los comicios antes y después de la elección y de participar en su administración y en el escrutinio, el fiscal general.
-\item La boleta será depositada en una urna. 
-\item El conteo de los votos se hará automáticamente. (para lograr que estén los resultados a las dos horas)
-\item El voto será enviado directo a un servidor del colegio. Luego estos votos serán enviados a su vez a un servidor central en el Centro de Computo Nacional. 
-\item El conteo de los votos se hará, además, manualmente con las boletas de la urna para que los fiscales puedan corroborar los resultados o con máquina que cuenta boletas
-\item Los Fiscales designados por los partidos puedan ejercer su derecho a controlar los comicios.
-\item Garantizar una competencia electoral igualitaria.
-\item La posición de los candidatos en la pantalla debe variar para cada Elector. (ambos lados)
-\item Los datos quedarán guardados en la máquina de manera digital.
-\item Evitar el fraude.
-\item Evitar la manipulación de los comicios.
-\item Evitar fraudes tradicionales como el voto cadena.(varía el formato la boleta o huella digital)
-\item Garantizar el anonimato y la transparencia
-\item Evitar asociar la identidad del Elector con su voto.
-\item Auditar el software y el hardware de las máquinas. Que el código sea validado por universidades previamente para asegurar que no se usa la información del elector.
-\item Máquinas con batería que puedan durar todo el día. Igualmente conectadas.
-\item Reducir el costo en comparación al sistema tradicional. 
-\item Reducir costos en materia de fiscalización y en la impresión de boletas partidarias.(papel ecológico)
-\item Evitar el robo de boletas en el cuarto oscuro. 
-\item Usuario presidente o fiscal que pueda leer información de la máquina (conteo de votos una vez cerrada la mesa, candidatos, abrir mesa, cerrar mesa, etc) (con tarjeta identificatoria, huella digital,  o password???????? ) 
-\item Permite votar si se le inserta una boleta dada por el presidente de mesa para poder votar. 
-\end{itemize}
-
 
 \end{document}
