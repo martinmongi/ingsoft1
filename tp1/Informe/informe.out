@@ -4,13 +4,19 @@
 \BOOKMARK [2][-]{subsection.2.1}{Presunciones de dominio}{section.2}% 4
 \BOOKMARK [2][-]{subsection.2.2}{Requerimientos}{section.2}% 5
 \BOOKMARK [2][-]{subsection.2.3}{Principales alternativas}{section.2}% 6
-\BOOKMARK [1][-]{section.3}{Casos hipot\351ticos}{}% 7
-\BOOKMARK [2][-]{subsection.3.1}{Curso de una votaci\363n est\341ndar}{section.3}% 8
-\BOOKMARK [2][-]{subsection.3.2}{Incorrecta elecci\363n de candidatos}{section.3}% 9
-\BOOKMARK [2][-]{subsection.3.3}{Incorrecto funcionamiento de la m\341quina}{section.3}% 10
-\BOOKMARK [2][-]{subsection.3.4}{Elector discapacitado}{section.3}% 11
-\BOOKMARK [2][-]{subsection.3.5}{Elector no vidente}{section.3}% 12
-\BOOKMARK [1][-]{section.4}{Vistas}{}% 13
-\BOOKMARK [2][-]{subsection.4.1}{Diagrama de Contexto}{section.4}% 14
-\BOOKMARK [1][-]{section.5}{Conclusi\363n}{}% 15
-\BOOKMARK [1][-]{section.6}{Listado de cosas que queremos lograr - PRE ENTREGA}{}% 16
+\BOOKMARK [3][-]{subsubsection.2.3.1}{M\351todos de autenticaci\363n}{subsection.2.3}% 7
+\BOOKMARK [1][-]{section.3}{Casos hipot\351ticos}{}% 8
+\BOOKMARK [2][-]{subsection.3.1}{Consulta del padr\363n}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.2}{Preparaci\363n de los espacios de voto y asignaci\363n de autoridades de mesa}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.3}{Curso de una votaci\363n est\341ndar}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.4}{Incorrecta elecci\363n de candidatos}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.5}{Incorrecto funcionamiento de la m\341quina}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.6}{Ubicaci\363n de los candidatos en la pantalla de la maquina de sufragios}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.7}{Elector discapacitado}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.8}{Elector no vidente}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.9}{Presidente de Mesa o Fiscal perciben algo extra\361o}{section.3}% 17
+\BOOKMARK [2][-]{subsection.3.10}{Resultados parciales}{section.3}% 18
+\BOOKMARK [1][-]{section.4}{Vistas}{}% 19
+\BOOKMARK [2][-]{subsection.4.1}{Diagrama de Contexto}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.2}{Nota del Diagrama de Objetivos}{section.4}% 21
+\BOOKMARK [1][-]{section.5}{Conclusi\363n}{}% 22
