@@ -1,0 +1,107 @@
+\documentclass[spanish, 10pt,a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage[pdftex]{graphicx}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{graphics}
+\usepackage{amsthm}
+\usepackage{subcaption}
+\usepackage{caratula}
+\usepackage{fancyhdr,lastpage}
+\usepackage[paper=a4paper, left=1.4cm, right=1.4cm, bottom=1.4cm, top=1.4cm]{geometry}
+\usepackage[table]{xcolor} % color en las matrices
+\usepackage[font=small,labelfont=bf]{caption} % caption de las figuras en letra mas chica que el texto
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{amsfonts}
+
+
+\color{black}
+
+%%%PAGE LAYOUT%%%
+\topmargin = -1.2cm
+\voffset = 0cm
+\hoffset = 0em
+\textwidth = 48em
+\textheight = 164 ex
+\oddsidemargin = 0.5 em
+\parindent = 2 em
+\parskip = 3 pt
+\footskip = 7ex
+\headheight = 20pt
+\pagestyle{fancy}
+\lhead{IS1 - Trabajo Pr\'actico 1} % cambia la parte izquierda del encabezado
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}} % cambia la parte derecha del encabezado
+\rfoot{\thepage}
+\cfoot{}
+\numberwithin{equation}{section} %sets equation numbers <chapter>.<section>.<subsection>.<index>
+
+\newcommand{\figurewidth}{1\textwidth}
+
+\newcommand{\tuple}[1]{\ensuremath{\left \langle #1 \right \rangle }}
+\newcommand{\Ode}[1]{\small{$\mathcal{O}(#1)$}}
+
+\input{caratula.tex} 
+\begin{document}
+{ \oddsidemargin = 2em
+	\headheight = -20pt
+	\maketitle
+}
+	
+\section{Requerimientos}
+\begin{itemize}
+\item Lograr que el CCN almcene internamente conteos parciales y totales.
+\item Lograr implementar una interfaz Web del CCN para proveer resultados parciales y totales a la página Web.
+\item Lograr que el CCN brinde información de los candidatos cuando la página web lo solicite.
+\item Lograr que el CCN permita cargar el padrón de electores.
+\item Lograr implementar una interfaz Web del CCN para proveer el padrón a la página web.
+\item Lograr que el CCN permita almacenar el padrón internamente.
+\item Lograr que la máquina emisora de sufragios permita modo \emph{root} mediante boletas especiales.
+\item Lograr calcular mediante porcentajes (sin sistema D'Hondt) gobernadores, presidentes, etc. electos totales y parciales.
+\item Lograr calcular mediante método D'Hondt diputados electos totales y parciales.
+\item Lograr que la CCN reciba los sufragios y conteos parciales de los servidores locales.
+\item Lograr considerar un voto emitido al momento de la confirmación del voto.
+\item Lograr que los servidores locales reciban los sufragios de las máquina emisoras.
+\item Lograr que los servidores locales envíen los conteos parciales y votos al CCN en rangos de 30 minutos.
+\item Lograr que el CCN al actualizar los conteos parciales, actualice los conteos totales.
+\item Lograr que el CCN reciba los conteos manuales parciales de los colegios.
+\item Lograr que el servidor local de cada escuela almacene los votos manuales ingresados por cada presidente de mesa en la máquina de sufragios de su correspondiente mesa.
+\item Lograr que las máquinas de sufragios reciban, mientras en modo \emph{root}, los conteos manuales.
+\item Lograr que los servidores locales envíen los conteos manuales de sus mesas al CCN.
+\item Lograr que el CCN verifique correspondencia entre los conteos manuales y los electrónicos.
+\item Lograr que el CCN actualice su base de información de votos y diferencias, para proveer a la página web.
+\item Lograr que la máquina emisora de sufragios permita el acceso solamente cuando una boleta válida es introducida.
+%\item Lograr que la máquina emisora de sugragios permita seleccionar el partido al que se quiere votar.
+%\item Lograr que al seleccionar el partido, la máquina permita seleccionar el candidato al que se quiere votar.
+\item Lograr variar la ubicación de los partidos y candidatos en la pantalla. ¿¿CAMBIAR POR OBJETIVOS BLANDOS??
+\item Lograr proveer información sobre partidos y candidatos a través de Internet, desde el CCN.
+\item Lograr que la máquina de sufragios obtenga la información sobre partidos y candidatos del CCN.
+\item Lograr que la máquina de sufragios provea información sobre los candidatos y partidos al elector.
+\item Lograr permitir el voto por categorías.
+\item Lograr permitir votar la lista completa.
+\item Lograr permitir votar en blanco.
+\item Lograr habilitar y deshabilitar las máquinas emisoras de sufragios, mediante la boleta de acceso \emph{root}.
+\item Lograr que la máquina de sufragios confirme el voto al realizarlo.
+\item Lograr que la máquina de sufragios imprima el voto al confirmarlo.
+\item Lograr que la máquina de sufragios permita ingresar la boleta.
+\item Lograr que la máquina de sufragios autentique al elector a través de la huella dactilar.
+\item Lograr que la máquina de sufragios permita emitir el sufragio, al ingresar la boleta.
+\item Lograr que la máquina de sufragios permita emitir el sufragio a través del audio.
+
+\end{itemize}
+
+\section{Hipótesis de dominio}
+
+\begin{itemize}
+\item Sólo votan los electores discapacitados sin declaración judicial de incapacidad.
+\end{itemize}
+
+\end{document}
