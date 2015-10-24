@@ -68,11 +68,33 @@
 \section{Presunciones}
 
 \section{Vistas}
+	A continuación se visualizarán los diagramas realizados junto con la explicación necesaria para cada tipo:
 \subsection{Diagrama de Contexto}
+	Se agrega el diagrama de contexto entregado en el trabajo práctico anterior con las modificaciones necesarias para adptarse a los O-refinamientos elegidos. 
 \subsection{Diagrama de Caso de Uso}
+
 \subsection{Diagrama de Clases}
 \subsubsection{OCL}
+\begin{itemize}
+	\item Si el \textit{candidato} se postula para algún cargo de la \textit{elección}
+\\	\textbf{Context: }  Elección
+\\	\textbf{def: }PerteneceACandidatosDeElección(candidatoABuscar: Candidato, elección: Elección) : bool = elección.se votan $\rightarrow$ select(cargo \textbar cargo.postulaciones$\rightarrow$select(candidato \textbar candidato.Dni = candidatoABuscar.Dni).size() =1).size()=1
+
+	\item Cada elector de una elección pertenece al padrón de la elección.
+\\	\textbf{Context: }  Elector
+\\	\textbf{inv: }self.participa en $\rightarrow$ forAll(eleccion \textbar eleccion.padron.electores$\rightarrow$select(elector \textbar self.Dni = elector.Dni).size() = 1)
+
+	\item Los candidatos seleccionados en la boleta deben ser candidatos de la elección.
+\\	\textbf{Context: }  Boleta
+\\	\textbf{inv: }self.candidatos$\rightarrow$ forAll(candidatoEnBoleta \textbar self.PerteneceACandidatosDeElección(candidatoEnBoleta, self.elección))
+
+	\item Los barrios asignados al encargado de máquinas pertenecen a una misma ciudad.
+\\	\textbf{Context: }  Encargado de Máquina
+\\	\textbf{inv: } self.asignados$\rightarrow$forAll(barrio1, barrio2 \textbar barrio1.Ciudad = barrio2.Ciudad)
+\end{itemize}
+
 \subsection{Diagrama de Actividad}
+
 \subsection{FSM}
 
 \section{Discusión}
