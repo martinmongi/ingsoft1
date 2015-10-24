@@ -103,6 +103,30 @@
 	\item Los barrios asignados al encargado de máquinas pertenecen a una misma ciudad.
 \\	\textbf{Context: }  Encargado de Máquina
 \\	\textbf{inv: } self.asignados$\rightarrow$forAll(barrio1, barrio2 \textbar barrio1.Ciudad = barrio2.Ciudad)
+
+	\item No hay electores repetidos
+\\	\textbf{Context: }  Elector
+\\	\textbf{inv: } Elector.AllInstances()$\rightarrow$forAll(elector1, elector2 \textbar elector1.Dni $\neq$ elector2.Dni)
+
+	\item No hay electores repetidos
+\\	\textbf{Context: }  Elector
+\\	\textbf{inv: } Elector.AllInstances()$\rightarrow$forAll(elector1, elector2 \textbar elector1.Dni $\neq$ elector2.Dni)
+
+	\item No hay mesas repetidas en una escuela
+\\	\textbf{Context: }  Escuela
+\\	\textbf{inv: } self.mesas$\rightarrow$forAll(mesa1, mesa2 \textbar mesa1.Número $\neq$ mesa2.Número
+
+	\item Las máquinas de sufragio son únicas
+\\	\textbf{Context: }  Máquina de sufragio
+\\	\textbf{inv: } Máquina de sufragio.AllInstances()$\rightarrow$forAll(maquina1, maquina2 \textbar maquina1.Id $\neq$ maquina2.Id)
+
+	\item Las boletas son únicas
+\\	\textbf{Context: }  Boleta
+\\	\textbf{inv: } Boleta.AllInstances()$\rightarrow$forAll(boleta1, boleta2 \textbar boleta1.Id $\neq$ boleta2.IId)
+
+	\item Las barrios son distinguibles.
+\\	\textbf{Context: }  Barrio
+\\	\textbf{inv: } Barrio.AllInstances()$\rightarrow$forAll(barrio1, barrio2 \textbar barrio1.Id $\neq$ barrio2.IId)
 \end{itemize}
 
 \subsection{Diagrama de Actividad}
