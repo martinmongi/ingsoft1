@@ -1,0 +1,88 @@
+\documentclass[spanish, 10pt,a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage[pdftex]{graphicx}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{graphics}
+\usepackage{amsthm}
+\usepackage{subcaption}
+\usepackage{caratula}
+\usepackage{fancyhdr,lastpage}
+\usepackage[paper=a4paper, left=1.4cm, right=1.4cm, bottom=1.4cm, top=1.4cm]{geometry}
+\usepackage[table]{xcolor} % color en las matrices
+\usepackage[font=small,labelfont=bf]{caption} % caption de las figuras en letra mas chica que el texto
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{amsfonts}
+\usepackage{upgreek}
+
+
+\color{black}
+
+%%%PAGE LAYOUT%%%
+\topmargin = -1.2cm
+\voffset = 0cm
+\hoffset = 0em
+\textwidth = 48em
+\textheight = 164 ex
+\oddsidemargin = 0.5 em
+\parindent = 2 em
+\parskip = 3 pt
+\footskip = 7ex
+\headheight = 20pt
+\pagestyle{fancy}
+\lhead{IS1 - Trabajo Pr\'actico 1} % cambia la parte izquierda del encabezado
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}} % cambia la parte derecha del encabezado
+\rfoot{\thepage}
+\cfoot{}
+\numberwithin{equation}{section} %sets equation numbers <chapter>.<section>.<subsection>.<index>
+
+\newcommand{\figurewidth}{1\textwidth}
+
+\newcommand{\tuple}[1]{\ensuremath{\left \langle #1 \right \rangle }}
+\newcommand{\Ode}[1]{\small{$\mathcal{O}(#1)$}}
+
+\input{caratula.tex} 
+\begin{document}
+{ \oddsidemargin = 2em
+	\headheight = -20pt
+	\maketitle
+}
+	\tableofcontents
+	\newpage
+\section{Introducción}
+	El Ministro de Gobierno quiere modificar el Sistema Electoral Nacional y para ello propone instalar en las escuelas máquinas emisoras de sufragios. Junto con esta incorporación se deberá modificar el Sistema del Centro de Cómputos Nacional para que pueda operar con las máquinas.
+
+	El formato de la votación no presenta cambios, es decir, al igual que en el sistema de boletas que se venía utilizando se permitirá votar por categorías o votar en blanco. 
+	
+	Además se busca proveer todos los mecanimos necesarios para asegurar el derecho de voto a todos los Electores. Se considerarán las necesidades de los no videntes y personas con movilidad reducida. 
+	
+\section{Presunciones}
+
+\section{Vistas}
+\subsection{Diagrama de Contexto}
+\subsection{Diagrama de Caso de Uso}
+\subsection{Diagrama de Clases}
+\subsubsection{OCL}
+\subsection{Diagrama de Actividad}
+\subsection{FSM}
+
+\section{Discusión}
+	
+\section{Conclusión}
+
+	%~ \newpage
+	%~ \bibliographystyle{plain}
+	%~ \clearpage
+	%~ \bibliography{bibliography}
+	%~ \addcontentsline{toc}{section}{Referencias}
+
+\end{document}
