@@ -1,0 +1,149 @@
+\documentclass[spanish, 10pt,a4paper]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage[pdftex]{graphicx}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{graphics}
+\usepackage{amsthm}
+\usepackage{subcaption}
+\usepackage{caratula}
+\usepackage{fancyhdr,lastpage}
+\usepackage[paper=a4paper, left=1.4cm, right=1.4cm, bottom=1.4cm, top=1.4cm]{geometry}
+\usepackage[table]{xcolor} % color en las matrices
+\usepackage[font=small,labelfont=bf]{caption} % caption de las figuras en letra mas chica que el texto
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{amsfonts}
+\usepackage{upgreek}
+
+
+\color{black}
+
+%%%PAGE LAYOUT%%%
+\topmargin = -1.2cm
+\voffset = 0cm
+\hoffset = 0em
+\textwidth = 48em
+\textheight = 164 ex
+\oddsidemargin = 0.5 em
+\parindent = 2 em
+\parskip = 3 pt
+\footskip = 7ex
+\headheight = 20pt
+\pagestyle{fancy}
+\lhead{IS1 - Trabajo Pr\'actico 1} % cambia la parte izquierda del encabezado
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}} % cambia la parte derecha del encabezado
+\rfoot{\thepage}
+\cfoot{}
+\numberwithin{equation}{section} %sets equation numbers <chapter>.<section>.<subsection>.<index>
+
+\newcommand{\figurewidth}{1\textwidth}
+
+\newcommand{\tuple}[1]{\ensuremath{\left \langle #1 \right \rangle }}
+\newcommand{\Ode}[1]{\small{$\mathcal{O}(#1)$}}
+
+\input{caratula.tex} 
+\begin{document}
+{ \oddsidemargin = 2em
+	\headheight = -20pt
+	\maketitle
+}
+	\tableofcontents
+	\newpage
+\section{Introducción}
+	El Ministro de Gobierno quiere modificar el Sistema Electoral Nacional y para ello propone instalar en las escuelas máquinas emisoras de sufragios. Junto con esta incorporación se deberá modificar el Sistema del Centro de Cómputos Nacional para que pueda operar con las máquinas.
+
+	El formato de la votación no presenta cambios, es decir, al igual que en el sistema de boletas que se venía utilizando se permitirá votar por categorías o votar en blanco. 
+	
+	Además se busca proveer todos los mecanimos necesarios para asegurar el derecho de voto a todos los Electores. Se considerarán las necesidades de los no videntes y personas con movilidad reducida. 
+	
+\section{Presunciones}
+
+\section{Vistas}
+	A continuación se visualizarán los diagramas realizados junto con la explicación necesaria para cada tipo:
+\subsection{Diagrama de Contexto}
+	Se agrega el diagrama de contexto entregado en el trabajo práctico anterior con las modificaciones necesarias para adptarse a los O-refinamientos elegidos. Esto corresponde a no realizar una autenticación por parte del Elector a la máquina de sufragio a la hora de realizar la votación (alcanza con insertar la boleta). Además, la habilitación del modo audio de la máquina de sufragio por parte del Presidente de Mesa se realiza solamente a través de la inserción de los auriculares. 
+\par El diagrama de contexto resultante es el siguiente:
+
+\vspace{\baselineskip}
+    \begin{center}
+                \includegraphics[scale=0.40]{imagenes/contexto/DiagramaDeContextoTP2.png}
+                \\
+                \vspace{1pt}
+                \footnotesize\textit{}
+        \end{center}
+\vspace{\baselineskip}
+
+
+\subsection{Diagrama de Caso de Uso}
+
+\subsection{Diagrama de Clases}
+\subsubsection{OCL}
+\begin{itemize}
+	\item Si el \textit{candidato} se postula para algún cargo de la \textit{elección}
+\\	\textbf{Context: }  Elección
+\\	\textbf{def: }PerteneceACandidatosDeElección(candidatoABuscar: Candidato, elección: Elección) : bool = elección.se votan $\rightarrow$ select(cargo \textbar cargo.postulaciones$\rightarrow$select(candidato \textbar candidato.Dni = candidatoABuscar.Dni).size() =1).size()=1
+
+	\item Cada elector de una elección pertenece al padrón de la elección.
+\\	\textbf{Context: }  Elector
+\\	\textbf{inv: }self.participa en $\rightarrow$ forAll(eleccion \textbar eleccion.padron.electores$\rightarrow$select(elector \textbar self.Dni = elector.Dni).size() = 1)
+
+	\item Los candidatos seleccionados en la boleta deben ser candidatos de la elección.
+\\	\textbf{Context: }  Boleta
+\\	\textbf{inv: }self.candidatos$\rightarrow$ forAll(candidatoEnBoleta \textbar self.PerteneceACandidatosDeElección(candidatoEnBoleta, self.elección))
+
+	\item Los barrios asignados al encargado de máquinas pertenecen a una misma ciudad.
+\\	\textbf{Context: }  Encargado de Máquina
+\\	\textbf{inv: } self.asignados$\rightarrow$forAll(barrio1, barrio2 \textbar barrio1.Ciudad = barrio2.Ciudad)
+
+	\item No hay electores repetidos
+\\	\textbf{Context: }  Elector
+\\	\textbf{inv: } Elector.AllInstances()$\rightarrow$forAll(elector1, elector2 \textbar elector1.Dni $\neq$ elector2.Dni)
+
+	\item No hay electores repetidos
+\\	\textbf{Context: }  Elector
+\\	\textbf{inv: } Elector.AllInstances()$\rightarrow$forAll(elector1, elector2 \textbar elector1.Dni $\neq$ elector2.Dni)
+
+	\item No hay mesas repetidas en una escuela
+\\	\textbf{Context: }  Escuela
+\\	\textbf{inv: } self.mesas$\rightarrow$forAll(mesa1, mesa2 \textbar mesa1.Número $\neq$ mesa2.Número
+
+	\item Las máquinas de sufragio son únicas
+\\	\textbf{Context: }  Máquina de sufragio
+\\	\textbf{inv: } Máquina de sufragio.AllInstances()$\rightarrow$forAll(maquina1, maquina2 \textbar maquina1.Id $\neq$ maquina2.Id)
+
+	\item Las boletas son únicas
+\\	\textbf{Context: }  Boleta
+\\	\textbf{inv: } Boleta.AllInstances()$\rightarrow$forAll(boleta1, boleta2 \textbar boleta1.Id $\neq$ boleta2.IId)
+
+	\item Las barrios son distinguibles.
+\\	\textbf{Context: }  Barrio
+\\	\textbf{inv: } Barrio.AllInstances()$\rightarrow$forAll(barrio1, barrio2 \textbar barrio1.Id $\neq$ barrio2.IId)
+\end{itemize}
+
+\subsection{Diagrama de Actividad}
+Una aclaracion pertinente de los diagramas de actividad es lo referente al abuso de notación en lo que refiere a la cardinalidad de los presidentes de mesa y de los votantes. En particular, como se puede ver en el diagrama que habla del momento previo a la votaci\'on propiamente dicha donde se preparan todos los elementos que componen la infraestructura base para llevar a cabo la votaci\'on, hay al final de este descripto en actividades un \'unico inicio de la votaci\'on por parte de un un unico presidente de mesa (a saber: cada presidente de mesa abre su correspondiente habilitando la m\'aquina de sufragios asociada). Por cuestiones de simplificaci\'on asumimos que se sobre entiende que ese flujo de actividades no corresponde unicamente a un solo presidente de mesa, sino a todos ellos.
+A su vez, ocurre lo mismo con los votantes que llegan a las diferentes mesas: para representar el flujo de un votante/auditor que viene a votar/auditar anunciandose en la m\'aquina nos limitamos a mostrar el flujo de un \'unico votante/auditor y generalizarlo para todos ellos; para simplificar el gr\'afico y porque no aporta nada intentar demostrar que la cardinalidad es superior a uno para estos conjuntos de actores en un diagrama de actividad. 
+Una aclaraci\'on m\'as, que habla de las actividades que son opcionales y que pueden ocurrir en cualquier momento del flujo establecido de actividades del sistema, es que dichas actividades fueron ubicadas de manera arbitraria en el diagrama en cuesti\'on pero manteniendo cierta coherencia con la l\'ogica, es decir: dichas actividades fueron situadas en momentos del diagrama donde tendr\'ia mayor sentido de que puedan llevarse a cabo que si fueran colocadas en otros sitios. (Con estas actividades nos referimos a la opcionalidad de aparici\'on, o no, de un auditor para comprobar el hardware y software de la m\'aquina de sufragios particular. Y, adem\'as, la actividad relacionada con la consulta del padr\'on que puede, o no, realizar un votante).
+\subsection{FSM}
+Nuestro sistema de voto electr\'onico cuenta con varios servidores locales. Cada uno de ellos es instalado en un colegio, para que las m\'aquinas emisoras de sufragios electr\'onicos puedan comunicarse con su servidor correspondiente. Por simplicidad, optamos por hacer el diagrama FSM de los servidores locales sobre uno solo de ellos y luego el FSM de las m\'aquinas emisoras de sufragios electr\'onicos sobre todas las m\'aquinas que corresponden a un mismo servidor. Pues para la representación general de nuestro sistema seria la repetici\'on de este escenario varias veces. Sin embargo, para el FSM de el centro de computo nacional lo hicimos sobre la totalidad de los servidores locales para poder hacer una correcta representaci\'on.
+
+\section{Discusión}
+	
+\section{Conclusión}
+
+	%~ \newpage
+	%~ \bibliographystyle{plain}
+	%~ \clearpage
+	%~ \bibliography{bibliography}
+	%~ \addcontentsline{toc}{section}{Referencias}
+
+\end{document}
