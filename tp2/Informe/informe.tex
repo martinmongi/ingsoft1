@@ -17,7 +17,6 @@
 \usepackage[paper=a4paper, left=1.4cm, right=1.4cm, bottom=1.4cm, top=1.4cm]{geometry}
 \usepackage[table]{xcolor} % color en las matrices
 \usepackage[font=small,labelfont=bf]{caption} % caption de las figuras en letra mas chica que el texto
-\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 \usepackage{listings}
 \usepackage{float}
 \usepackage{pdfpages}
@@ -85,6 +84,676 @@
 
 \subsection{Diagrama de Caso de Uso}
 
+\vspace{\baselineskip}
+    \begin{center}
+                \includegraphics[scale=0.40]{imagenes/CasosDeUso.png}
+                \\
+                \vspace{1pt}
+                \footnotesize\textit{}
+        \end{center}
+\vspace{\baselineskip}
+
+\newpage
+
+\noindent\textbf{Detalle de Casos de Uso:}\\
+
+\noindent\textbf{Caso de Uso: Votando candidatos}\\
+\textbf{Actor: } Persona.\\
+\textbf{Pre: } Se abrieron los comicios.\\
+\textbf{Post: } La persona logra registrar su voto.\\
+\begin{table}[H]
+  \centering
+\bgroup
+\def\arraystretch{1.3}
+  \begin{tabular}{p{9cm} | p{7cm}}
+    \hline
+    Curso Normal & Curso Alternativo \\
+    \hline
+    \hline    
+    1. La \textbf{\textit{persona}} ingresa la \textit{boleta de votación}. 
+    & \\
+    
+    \hline
+    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
+    &
+    \\
+    
+    \hline
+    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de votación}.
+    & 
+    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    \\
+    
+    \hline
+    4 El \textbf{\textit{SVE}} le brinda a la persona, las opciones de \textit{''votar lista completa''} y \textit{''votar por categorías''}.
+    & 
+    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    \\
+    
+    \hline
+    5 La \textbf{\textit{persona}} elije una de las dos opciones mostradas en el paso anterior.
+    & \\
+    
+    \hline
+    6 Si la \textbf{\textit{persona}} eligió lista completa, continúo con el \textbf{\textit{paso 14}}.
+    & \\
+    
+    \hline
+    7 El \textbf{\textit{SVE}} muestra como opciones distintas a cada uno de los candidatos de una categoría y otra opción de \textit{''votar en blanco''}.
+    & 
+    7.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    \\
+    
+    \hline
+    8 La \textbf{\textit{persona}} elije una de las opciones mostradas en el paso anterior.
+    & \\
+    
+    \hline
+    9 El \textbf{\textit{SVE}} verifica que se hayan votado todas las categorías. Si falta votar alguna categoría, continúo con la siguiente categoría y sigo con el \textbf{\textit{paso 7}}.
+    & \\
+    
+    \hline
+    10 El \textbf{\textit{SVE}} mostrará la elección de cada uno de los candidatos elegidos por la persona, para que la misma pueda verificarlos.
+    & \\
+    
+    \hline
+    11 La \textbf{\textit{persona}} confirmará que desea realizar esa votación.
+    & 
+    11.1 En el caso en que la \textbf{\textit{persona}} no desee confirmar la votación y haya elegido realizarla nuevamente, voy al \textbf{\textit{paso 3}}.\\
+    
+    \hline
+    12 El \textbf{\textit{SVE}} registra el voto.
+    & 
+    12.1 En el caso en que no se pueda registrar el voto, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de registración''}
+    \\
+    
+    \hline
+    13 Fin de CU
+    & \\
+    
+    \hline
+    14 El \textbf{\textit{SVE}} muestra como opciones distintas a cada uno de las listas completas de los candidatos y otra opción de \textit{''votar en blanco''}.
+    & 
+    14.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    \\
+    
+    \hline
+    15 La \textbf{\textit{persona}} elije una de las opciones mostradas en el paso anterior, y continúo en el \textbf{\textit{paso 10}}.
+    & \\
+    \hline
+  \end{tabular}
+\egroup
+\end{table}
+
+
+\newpage
+\noindent\textbf{Caso de Uso: Imprimiendo boleta}\\
+\textbf{Actor: } Persona.\\
+\textbf{Pre: } Se confirmó el voto y se encuentra ingresada la boleta de votación.\\
+\textbf{Post: } Se imprime la boleta.\\
+\begin{table}[H]
+  \centering
+\bgroup
+\def\arraystretch{1.3}
+  \begin{tabular}{p{9cm} | p{7cm}}
+    \hline
+    Curso Normal & Curso Alternativo \\
+    \hline
+    \hline    
+    1. La \textbf{\textit{persona}} selecciona la opción de \textit{''Imprimir boleta''}. 
+    & \\
+    
+    \hline
+    2. El \textbf{\textit{SVE}} imprime la boleta.
+    &
+    2.1 En el caso en que no se pueda imprimir la boleta, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de impresión''}
+    \\
+    
+    \hline
+    3 Fin de CU
+    & \\
+    \hline
+  \end{tabular}
+\egroup
+\end{table}
+
+
+\noindent\textbf{Caso de Uso: Actualizando información de página web}\\
+\textbf{Actor: } Página web.\\
+\textbf{Pre: } Se cerraron los comicios.\\
+\textbf{Post: } Se actualiza la información de los resultados en la página web.\\
+\begin{table}[H]
+  \centering
+  \begin{tabular}{p{9cm} | p{7cm}}
+    \hline
+    Curso Normal & Curso Alternativo \\
+    \hline
+    \hline    
+    1. La \textbf{\textit{Página web}} consulta resultados al \textbf{\textit{SVE}}. 
+    & \\
+    
+    \hline
+    2. El \textbf{\textit{SVE}} brinda satisfactoriamente la información a la página web
+    & 
+    2.1 Si el \textbf{\textit{SVE}} no puede brindar la información, se mostrará un mensaje de \textit{''Error de actualización de resultados''} en la página web.
+    \\
+    
+    \hline
+    3. La \textbf{\textit{Página web}} actualizará los resultados en la página web.
+    & \\
+    \hline
+  \end{tabular}
+\end{table}
+
+
+\noindent\textbf{Caso de Uso: Actualizando padrón y candidatos}\\
+\textbf{Actor: } Página web.\\
+\textbf{Pre: } Faltan por lo menos 24hs para la apertura de los comicios.\\
+\textbf{Post: } Se actualiza la información del padrón y de los candidatos en la página web.\\
+\begin{table}[H]
+  \centering
+  \begin{tabular}{p{9cm} | p{7cm}}
+    \hline
+    Curso Normal & Curso Alternativo \\
+    \hline
+    \hline    
+    1. La \textbf{\textit{Página web}} consulta el padrón y los candidatos al \textbf{\textit{SVE}}. 
+    & \\
+    
+    \hline
+    2. El \textbf{\textit{SVE}} brinda satisfactoriamente la información a la \textbf{\textit{Página web}}
+    & 
+    2.1 Si el \textbf{\textit{SVE}} no puede brindar la información, se mostrará un mensaje de \textit{''Error de actualización de padrón y candidatos''} en la página web.
+    \\
+    
+    \hline
+    3. La \textbf{\textit{Página web}} actualizará el padrón y los candidatos en la página web.
+    & \\
+    \hline
+  \end{tabular}
+\end{table}
+
+
+\newpage
+\noindent\textbf{Caso de Uso: Abriendo comicios}\\
+\textbf{Actor: } Presidente de mesa.\\
+\textbf{Pre: } Los comicios no se encuentran abiertos.\\
+\textbf{Post: } Se abren los comicios.\\
+\begin{table}[H]
+  \centering
+\bgroup
+\def\arraystretch{1.3}
+  \begin{tabular}{p{9cm} | p{7cm}}
+    \hline
+    Curso Normal & Curso Alternativo \\
+    \hline
+    \hline    
+    1. El \textbf{\textit{presidente de mesa}} ingresa la \textit{boleta de presidente de mesa}. 
+    & \\
+    
+    \hline
+    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
+    &
+    \\
+    
+    \hline
+    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de presidente de mesa}.
+    & 
+    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    \\
+    
+    \hline
+    4 El \textbf{\textit{SVE}} le brinda a la persona, las opciones de \textit{''abrir comicios''}, \textit{''cerrar comicios''}, \textit{''ingresar resultados''} y \textit{''ingresar número de mesa''}.
+    & 
+    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    \\
+    
+    \hline
+    5 El \textbf{\textit{presidente de mesa}} elije la opcion de \textit{''abrir comicios''}.
+    & \\
+    
+    \hline
+    6. El \textbf{\textit{SVE}} registra la apertura de los comicios.
+    &
+    6.1 En el caso en que no se pueda registrar la apertura, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de registración''}
+    \\
+    
+    \hline
+    7 Fin de CU
+    & \\
+    \hline
+  \end{tabular}
+\egroup
+\end{table}
+
+
+\noindent\textbf{Caso de Uso: Cerrando comicios}\\
+\textbf{Actor: } Presidente de mesa.\\
+\textbf{Pre: } Los comicios se encuentran abiertos.\\
+\textbf{Post: } Se cierran los comicios.\\
+\begin{table}[H]
+  \centering
+\bgroup
+\def\arraystretch{1.3}
+  \begin{tabular}{p{9cm} | p{7cm}}
+    \hline
+    Curso Normal & Curso Alternativo \\
+    \hline
+    \hline    
+    1. El \textbf{\textit{presidente de mesa}} ingresa la \textit{boleta de presidente de mesa}. 
+    & \\
+    
+    \hline
+    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
+    &
+    \\
+    
+    \hline
+    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de presidente de mesa}.
+    & 
+    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    \\
+    
+    \hline
+    4 El \textbf{\textit{SVE}} le brinda a la persona, las opciones de \textit{''abrir comicios''}, \textit{''cerrar comicios''}, \textit{''ingresar resultados''} y \textit{''ingresar número de mesa''}.
+    & 
+    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    \\
+    
+    \hline
+    5 El \textbf{\textit{presidente de mesa}} elije la opcion de \textit{''cerrar comicios''}.
+    & \\
+    
+    \hline
+    6. El \textbf{\textit{SVE}} registra el cierre de los comicios.
+    &
+    6.1 En el caso en que no se pueda registrar el cierre, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de registración''}
+    \\
+    
+    \hline
+    7 Fin de CU
+    & \\
+    \hline
+  \end{tabular}
+\egroup
+\end{table}
+
+
+\newpage
+\noindent\textbf{Caso de Uso: Ingresando resultados}\\
+\textbf{Actor: } Presidente de mesa.\\
+\textbf{Pre: } Los comicios se encuentran cerrados.\\
+\textbf{Post: } Se registran los resultados.\\
+\begin{table}[H]
+  \centering
+\bgroup
+\def\arraystretch{1.3}
+  \begin{tabular}{p{9cm} | p{7cm}}
+    \hline
+    Curso Normal & Curso Alternativo \\
+    \hline
+    \hline    
+    1. El \textbf{\textit{presidente de mesa}} ingresa la \textit{boleta de presidente de mesa}. 
+    & \\
+    
+    \hline
+    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
+    &
+    \\
+    
+    \hline
+    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de presidente de mesa}.
+    & 
+    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    \\
+    
+    \hline
+    4 El \textbf{\textit{SVE}} le brinda a la persona, las opciones de \textit{''abrir comicios''}, \textit{''cerrar comicios''}, \textit{''ingresar resultados''} y \textit{''ingresar número de mesa''}.
+    & 
+    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    \\
+    
+    \hline
+    5 El \textbf{\textit{presidente de mesa}} elije la opcion de \textit{''ingresar resultados''}.
+    & \\
+    
+    \hline
+    4 El \textbf{\textit{presidente de mesa}} ingresa los resultados a través de un pendrive con conexión USB, en donde en el mismo se encuentra un archivo con los resultados.
+    \\
+    
+    \hline
+    6. El \textbf{\textit{SVE}} registra los resultados.
+    &
+    6.1 En el caso en que no se puedan registrar los resultados, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de registración''}
+    \\
+    
+    \hline
+    7 Fin de CU
+    & \\
+    \hline
+  \end{tabular}
+\egroup
+\end{table}
+
+
+\noindent\textbf{Caso de Uso: Ingresando número de mesa}\\
+\textbf{Actor: } Presidente de mesa.\\
+\textbf{Pre: } Los comicios se encuentran cerrados.\\
+\textbf{Post: } Se ingresa el número de mesa.\\
+\begin{table}[H]
+  \centering
+\bgroup
+\def\arraystretch{1.3}
+  \begin{tabular}{p{9cm} | p{7cm}}
+    \hline
+    Curso Normal & Curso Alternativo \\
+    \hline
+    \hline    
+    1. El \textbf{\textit{presidente de mesa}} ingresa la \textit{boleta de presidente de mesa}. 
+    & \\
+    
+    \hline
+    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
+    &
+    \\
+    
+    \hline
+    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de presidente de mesa}.
+    & 
+    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    \\
+    
+    \hline
+    4 El \textbf{\textit{SVE}} le brinda a la persona, las opciones de \textit{''abrir comicios''}, \textit{''cerrar comicios''}, \textit{''ingresar resultados''} y \textit{''ingresar número de mesa''}.
+    & 
+    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    \\
+    
+    \hline
+    5 El \textbf{\textit{presidente de mesa}} elije la opcion de \textit{''ingresar número de mesa''}.
+    & \\
+    
+    \hline
+    4 El \textbf{\textit{presidente de mesa}} ingresa el número de mesa.
+    \\
+    
+    \hline
+    6. El \textbf{\textit{SVE}} registra el número de mesa.
+    &
+    6.1 En el caso en que no se puedan registrar los resultados, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de registración''}
+    \\
+    
+    \hline
+    7 Fin de CU
+    & \\
+    \hline
+  \end{tabular}
+\egroup
+\end{table}
+
+\noindent\textbf{Caso de Uso: Actualizando software de la maquina emisora de sufragios}\\
+\textbf{Actor: } Encargado de la maquina.\\
+\textbf{Pre: } No se abrieron los comicios.\\
+\textbf{Post: } Se actualiza el software de la maquina emisora de sufragios.\\
+\begin{table}[H]
+  \centering
+\bgroup
+\def\arraystretch{1.3}
+  \begin{tabular}{p{9cm} | p{7cm}}
+    \hline
+    Curso Normal & Curso Alternativo \\
+    \hline
+    \hline    
+    1. El \textbf{\textit{Encargado de la maquina}} ingresa la \textit{boleta de encargado de maquina}. 
+    & \\
+    
+    \hline
+    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
+    &
+    \\
+    
+    \hline
+    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de encargado de maquina}.
+    & 
+    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    \\
+    
+    \hline
+    4 El \textbf{\textit{SVE}} le brinda a la persona, las opciones de \textit{''actualizar software''} y \textit{''actualizar base de datos''}.
+    & 
+    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    \\
+    
+    \hline
+    5 El \textbf{\textit{Encargado de la maquina}} elije la opcion de \textit{''actualizar software''}.
+    & \\
+    
+    \hline
+    6. El \textbf{\textit{SVE}} descarga el software que se encuentra en el repositorio y actualiza el software en las maquina.
+    &
+    6.1 En el caso en que no se pueda descargar y actualizar el software, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de actualización''}
+    \\
+    
+    \hline
+    7 Fin de CU
+    & \\
+    \hline
+  \end{tabular}
+\egroup
+\end{table}
+
+
+\noindent\textbf{Caso de Uso: Actualizando datos de maquina emisora de sufragios}\\
+\textbf{Actor: } Encargado de la maquina.\\
+\textbf{Pre: } No se abrieron los comicios.\\
+\textbf{Post: } Se actualizan los datos de la maquina emisora de sufragios.\\
+\begin{table}[H]
+  \centering
+\bgroup
+\def\arraystretch{1.3}
+  \begin{tabular}{p{9cm} | p{7cm}}
+    \hline
+    Curso Normal & Curso Alternativo \\
+    \hline
+    \hline    
+    1. El \textbf{\textit{Encargado de la maquina}} ingresa la \textit{boleta de encargado de maquina}. 
+    & \\
+    
+    \hline
+    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
+    &
+    \\
+    
+    \hline
+    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de encargado de maquina}.
+    & 
+    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    \\
+    
+    \hline
+    4 El \textbf{\textit{SVE}} le brinda a la persona, las opciones de \textit{''actualizar software''} y \textit{''actualizar base de datos''}.
+    & 
+    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    \\
+    
+    \hline
+    5 El \textbf{\textit{Encargado de la maquina}} elije la opcion de \textit{''actualizar base de datos''}.
+    & \\
+    
+    \hline
+    6. El \textbf{\textit{SVE}} descarga la base de datos y se actualiza en las maquina.
+    &
+    6.1 En el caso en que no se puedan actualizar los datos, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de actualización''}
+    \\
+    
+    \hline
+    7 Fin de CU
+    & \\
+    \hline
+  \end{tabular}
+\egroup
+\end{table}
+
+
+\newpage
+\noindent\textbf{Caso de Uso: Consultando resultados}\\
+\textbf{Actor: } Fiscal.\\
+\textbf{Pre: } Se cerraron los comicios.\\
+\textbf{Post: } Se consultaron los resultados.\\
+\begin{table}[H]
+  \centering
+\bgroup
+\def\arraystretch{1.3}
+  \begin{tabular}{p{9cm} | p{7cm}}
+    \hline
+    Curso Normal & Curso Alternativo \\
+    \hline
+    \hline    
+    1. El \textbf{\textit{Fiscal}} ingresa la \textit{boleta de fiscal}. 
+    & \\
+    
+    \hline
+    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
+    &
+    \\
+    
+    \hline
+    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de fiscal}.
+    & 
+    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    \\
+    
+    \hline
+    4 El \textbf{\textit{SVE}} le brinda a la persona, la opción de \textit{''consultar resultados''}.
+    & 
+    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    \\
+    
+    \hline
+    5 El \textbf{\textit{Fiscal}} elije la opcion de \textit{''consultar resultados''}.
+    & \\
+    
+    \hline
+    6. El \textbf{\textit{SVE}} brinda los resultados.
+    &
+    6.1 En el caso en que no se puedan consultar los resultados, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error en la consulta de datos''}
+    \\
+    
+    \hline
+    7 Fin de CU
+    & \\
+    \hline
+  \end{tabular}
+\egroup
+\end{table}
+
+
+\noindent\textbf{Caso de Uso: Consultando candidatos}\\
+\textbf{Actor: } Fiscal.\\
+\textbf{Pre: } Se cerraron los comicios.\\
+\textbf{Post: } Se consultaron los candidatos.\\
+\begin{table}[H]
+  \centering
+\bgroup
+\def\arraystretch{1.3}
+  \begin{tabular}{p{9cm} | p{7cm}}
+    \hline
+    Curso Normal & Curso Alternativo \\
+    \hline
+    \hline    
+    1. El \textbf{\textit{Fiscal}} ingresa la \textit{boleta de fiscal}. 
+    & \\
+    
+    \hline
+    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
+    &
+    \\
+    
+    \hline
+    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de fiscal}.
+    & 
+    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    \\
+    
+    \hline
+    4 El \textbf{\textit{SVE}} le brinda a la persona, la opción de \textit{''consultar candidatos''}.
+    & 
+    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    \\
+    
+    \hline
+    5 El \textbf{\textit{Fiscal}} elije la opcion de \textit{''consultar candidatos''}.
+    & \\
+    
+    \hline
+    6. El \textbf{\textit{SVE}} brinda los candidatos.
+    &
+    6.1 En el caso en que no se puedan consultar los candidatos, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error en la consulta de datos''}
+    \\
+    
+    \hline
+    7 Fin de CU
+    & \\
+    \hline
+  \end{tabular}
+\egroup
+\end{table}
+
+
+\newpage
+\noindent\textbf{Caso de Uso: Cargando padrón y candidatos}\\
+\textbf{Actor: } Encargado del CCN.\\
+\textbf{Pre: } No se abrieron los comicios.\\
+\textbf{Post: } Se cargó el padrón y los candidatos.\\
+\begin{table}[H]
+  \centering
+\bgroup
+\def\arraystretch{1.3}
+  \begin{tabular}{p{9cm} | p{7cm}}
+    \hline
+    Curso Normal & Curso Alternativo \\
+    \hline
+    \hline    
+    1. El \textbf{\textit{Encargado del CCN}} ingresa la \textit{boleta de encargado del CCN}. 
+    & \\
+    
+    \hline
+    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
+    &
+    \\
+    
+    \hline
+    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de encargado del CCN}.
+    & 
+    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    \\
+    
+    \hline
+    4 El \textbf{\textit{SVE}} le brinda a la persona, la opción de \textit{''cargar padrón y candidatos''}.
+    & 
+    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    \\
+    
+    \hline
+    5 El \textbf{\textit{Encargado de la maquina}} elije la opcion de \textit{''cargar padrón y candidatos''}.
+    & \\
+    
+    \hline
+    6. El \textbf{\textit{SVE}} registra el padrón y los candidatos.
+    &
+    6.1 En el caso en que no se puedan registrar el padrón y los candidatos, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de registración''}
+    \\
+    
+    \hline
+    7 Fin de CU
+    & \\
+    \hline
+  \end{tabular}
+\egroup
+\end{table}
+
+
+\newpage
 \subsection{Diagrama de Clases}
 \subsubsection{OCL}
 \begin{itemize}
