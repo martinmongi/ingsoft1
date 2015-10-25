@@ -114,20 +114,20 @@
     & \\
     
     \hline
-    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
+    2. La \textbf{\textit{máquina de sufragio}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
     &
     \\
     
     \hline
-    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de votación}.
+    3 La \textbf{\textit{máquina de sufragio}} verifica que sea una \textit{boleta de votación}.
     & 
-    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    3.1 En el caso que no sea una boleta válida, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de boleta''}
     \\
     
     \hline
-    4 El \textbf{\textit{SVE}} le brinda a la persona, las opciones de \textit{''votar lista completa''} y \textit{''votar por categorías''}.
+    4 La \textbf{\textit{máquina de sufragio}} le brinda a la persona, las opciones de \textit{''votar lista completa''} y \textit{''votar por categorías''}.
     & 
-    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    4.1 En el caso en que no se pueda mostrar la información necesaria, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de interfaz''}
     \\
     
     \hline
@@ -135,13 +135,13 @@
     & \\
     
     \hline
-    6 Si la \textbf{\textit{persona}} eligió lista completa, continúo con el \textbf{\textit{paso 14}}.
+    6 Si la \textbf{\textit{persona}} eligió lista completa, Ir al \textbf{\textit{paso 14}}.
     & \\
     
     \hline
-    7 El \textbf{\textit{SVE}} muestra como opciones distintas a cada uno de los candidatos de una categoría y otra opción de \textit{''votar en blanco''}.
+    7 La \textbf{\textit{máquina de sufragio}} muestra como opciones distintas a cada uno de los candidatos de una categoría y otra opción de \textit{''votar en blanco''}.
     & 
-    7.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    7.1 En el caso en que no se pueda mostrar la información necesaria, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de interfaz''}
     \\
     
     \hline
@@ -149,38 +149,41 @@
     & \\
     
     \hline
-    9 El \textbf{\textit{SVE}} verifica que se hayan votado todas las categorías. Si falta votar alguna categoría, continúo con la siguiente categoría y sigo con el \textbf{\textit{paso 7}}.
+    9 La \textbf{\textit{máquina de sufragio}} verifica que se hayan votado todas las categorías. Si falta votar alguna categoría, continúo con la siguiente categoría, ir al \textbf{\textit{paso 7}}.
     & \\
     
     \hline
-    10 El \textbf{\textit{SVE}} mostrará la elección de cada uno de los candidatos elegidos por la persona, para que la misma pueda verificarlos.
+    10 La \textbf{\textit{máquina de sufragio}} mostrará la elección de cada uno de los candidatos elegidos por la persona, junto con un botón de aceptar y otro de cancelar para que la misma pueda verificarlos.
     & \\
     
     \hline
     11 La \textbf{\textit{persona}} confirmará que desea realizar esa votación.
-    & 
-    11.1 En el caso en que la \textbf{\textit{persona}} no desee confirmar la votación y haya elegido realizarla nuevamente, voy al \textbf{\textit{paso 3}}.\\
+     En el caso en que la \textbf{\textit{persona}} no desee confirmar la votación y haya elegido realizarla nuevamente, ir al \textbf{\textit{paso 3}}.\\
     
     \hline
-    12 El \textbf{\textit{SVE}} registra el voto.
+    12 La \textbf{\textit{máquina de sufragio}} registra el voto.
     & 
-    12.1 En el caso en que no se pueda registrar el voto, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de registración''}
+    12.1 En el caso en que no se pueda registrar el voto, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de registración''}
     \\
     
     \hline
-    13 Fin de CU
+    13 Ir al  \textbf{\textit{paso 16}}
     & \\
     
     \hline
-    14 El \textbf{\textit{SVE}} muestra como opciones distintas a cada uno de las listas completas de los candidatos y otra opción de \textit{''votar en blanco''}.
+    14 La \textbf{\textit{máquina de sufragio}} muestra como opciones distintas a cada uno de las listas completas de los candidatos y otra opción de \textit{''votar en blanco''}.
     & 
-    14.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    14.1 En el caso en que no se pueda mostrar la información necesaria, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de interfaz''}
     \\
     
     \hline
-    15 La \textbf{\textit{persona}} elije una de las opciones mostradas en el paso anterior, y continúo en el \textbf{\textit{paso 10}}.
+    15 La \textbf{\textit{persona}} elije una de las opciones mostradas en el paso anterior. Ir al \textbf{\textit{paso 10}}.
     & \\
     \hline
+
+    \hline
+    16 Fin de Caso de Uso.
+    & \\
   \end{tabular}
 \egroup
 \end{table}
@@ -204,9 +207,9 @@
     & \\
     
     \hline
-    2. El \textbf{\textit{SVE}} imprime la boleta.
+    2. La \textbf{\textit{máquina de sufragio}} imprime la boleta.
     &
-    2.1 En el caso en que no se pueda imprimir la boleta, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de impresión''}
+    2.1 En el caso en que no se pueda imprimir la boleta, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de impresión''}
     \\
     
     \hline
@@ -229,13 +232,13 @@
     Curso Normal & Curso Alternativo \\
     \hline
     \hline    
-    1. La \textbf{\textit{Página web}} consulta resultados al \textbf{\textit{SVE}}. 
+    1. La \textbf{\textit{Página web}} consulta resultados al \textbf{\textit{Centro de Cómputo Nacional}}. 
     & \\
     
     \hline
-    2. El \textbf{\textit{SVE}} brinda satisfactoriamente la información a la página web
+    2. El \textbf{\textit{Centro de Cómputo Nacional}} brinda satisfactoriamente la información a la página web
     & 
-    2.1 Si el \textbf{\textit{SVE}} no puede brindar la información, se mostrará un mensaje de \textit{''Error de actualización de resultados''} en la página web.
+    2.1 Si el \textbf{\textit{Centro de Cómputo Nacional}} no puede brindar la información, se mostrará un mensaje de \textit{''Error de actualización de resultados''} en la página web.
     \\
     
     \hline
@@ -257,13 +260,13 @@
     Curso Normal & Curso Alternativo \\
     \hline
     \hline    
-    1. La \textbf{\textit{Página web}} consulta el padrón y los candidatos al \textbf{\textit{SVE}}. 
+    1. La \textbf{\textit{Página web}} consulta el padrón y los candidatos al \textbf{\textit{Centro de Cómputo Nacional}}. 
     & \\
     
     \hline
-    2. El \textbf{\textit{SVE}} brinda satisfactoriamente la información a la \textbf{\textit{Página web}}
+    2. El \textbf{\textit{Centro de Cómputo Nacional}} brinda satisfactoriamente la información a la \textbf{\textit{Página web}}
     & 
-    2.1 Si el \textbf{\textit{SVE}} no puede brindar la información, se mostrará un mensaje de \textit{''Error de actualización de padrón y candidatos''} en la página web.
+    2.1 Si el \textbf{\textit{Centro de Cómputo Nacional}} no puede brindar la información, se mostrará un mensaje de \textit{''Error de actualización de padrón y candidatos''} en la página web.
     \\
     
     \hline
@@ -292,30 +295,30 @@
     & \\
     
     \hline
-    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
+    2. La \textbf{\textit{máquina de sufragio}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
     &
     \\
     
     \hline
-    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de presidente de mesa}.
+    3 La \textbf{\textit{máquina de sufragio}} verifica que sea una \textit{boleta de presidente de mesa}.
     & 
-    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    3.1 En el caso que no sea una boleta válida, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de boleta''}
     \\
     
     \hline
-    4 El \textbf{\textit{SVE}} le brinda a la persona, las opciones de \textit{''abrir comicios''}, \textit{''cerrar comicios''}, \textit{''ingresar resultados''} y \textit{''ingresar número de mesa''}.
+    4 La \textbf{\textit{máquina de sufragio}} le brinda a la persona, las opciones de \textit{''abrir comicios''}, \textit{''cerrar comicios''}, \textit{''ingresar resultados''} y \textit{''ingresar número de mesa''}.
     & 
-    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    4.1 En el caso en que no se pueda mostrar la información necesaria, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de interfaz''}
     \\
     
     \hline
-    5 El \textbf{\textit{presidente de mesa}} elije la opcion de \textit{''abrir comicios''}.
+    5 El \textbf{\textit{presidente de mesa}} elige la opcion de \textit{''abrir comicios''}.
     & \\
     
     \hline
-    6. El \textbf{\textit{SVE}} registra la apertura de los comicios.
+    6. Lal \textbf{\textit{máquina de sufragio}} registra la apertura de los comicios.
     &
-    6.1 En el caso en que no se pueda registrar la apertura, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de registración''}
+    6.1 En el caso en que no se pueda registrar la apertura, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de registración''}. Ir al paso 2.
     \\
     
     \hline
@@ -344,30 +347,30 @@
     & \\
     
     \hline
-    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
+    2. La \textbf{\textit{máquina de sufragio}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
     &
     \\
     
     \hline
-    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de presidente de mesa}.
+    3 La \textbf{\textit{máquina de sufragio}} verifica que sea una \textit{boleta de presidente de mesa}.
     & 
-    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    3.1 En el caso que no sea una boleta válida, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de boleta''}
     \\
     
     \hline
-    4 El \textbf{\textit{SVE}} le brinda a la persona, las opciones de \textit{''abrir comicios''}, \textit{''cerrar comicios''}, \textit{''ingresar resultados''} y \textit{''ingresar número de mesa''}.
+    4 La \textbf{\textit{máquina de sufragio}} le brinda a la persona, las opciones de \textit{''abrir comicios''}, \textit{''cerrar comicios''}, \textit{''ingresar resultados''} y \textit{''ingresar número de mesa''}.
     & 
-    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    4.1 En el caso en que no se pueda mostrar la información necesaria, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de interfaz''}
     \\
     
     \hline
-    5 El \textbf{\textit{presidente de mesa}} elije la opcion de \textit{''cerrar comicios''}.
+    5 El \textbf{\textit{presidente de mesa}} elige la opcion de \textit{''cerrar comicios''}.
     & \\
     
     \hline
-    6. El \textbf{\textit{SVE}} registra el cierre de los comicios.
+    6. La \textbf{\textit{máquina de sufragio}} registra el cierre de los comicios.
     &
-    6.1 En el caso en que no se pueda registrar el cierre, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de registración''}
+    6.1 En el caso en que no se pueda registrar el cierre, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de registración''}
     \\
     
     \hline
@@ -397,38 +400,42 @@
     & \\
     
     \hline
-    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
+    2. La \textbf{\textit{máquina de sufragio}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
     &
     \\
     
     \hline
-    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de presidente de mesa}.
+    3 La \textbf{\textit{máquina de sufragio}} verifica que sea una \textit{boleta de presidente de mesa}.
     & 
-    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    3.1 En el caso que no sea una boleta válida, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de boleta''}
     \\
     
     \hline
-    4 El \textbf{\textit{SVE}} le brinda a la persona, las opciones de \textit{''abrir comicios''}, \textit{''cerrar comicios''}, \textit{''ingresar resultados''} y \textit{''ingresar número de mesa''}.
+    4 La \textbf{\textit{máquina de sufragio}} le brinda a la persona, las opciones de \textit{''abrir comicios''}, \textit{''cerrar comicios''}, \textit{''ingresar resultados''} y \textit{''ingresar número de mesa''}.
     & 
-    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    4.1 En el caso en que no se pueda mostrar la información necesaria, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de interfaz''}
     \\
     
     \hline
-    5 El \textbf{\textit{presidente de mesa}} elije la opcion de \textit{''ingresar resultados''}.
+    5 El \textbf{\textit{presidente de mesa}} elige la opcion de \textit{''ingresar resultados''}.
     & \\
     
     \hline
-    4 El \textbf{\textit{presidente de mesa}} ingresa los resultados a través de un pendrive con conexión USB, en donde en el mismo se encuentra un archivo con los resultados.
+    6. La \textbf{\textit{máquina de sufragio}} muestra un listado con todos los candidatos con un texto editable por fila.
     \\
     
+  \hline
+    7.El \textbf{\textit{presidente de mesa}} completa cada fila con los valores de recuento manual para cada candidato.
+    \\
+	
     \hline
-    6. El \textbf{\textit{SVE}} registra los resultados.
+    8. Si los datos están completos, la \textbf{\textit{máquina de sufragio}} registra los resultados. Si no, muestra un un mensaje sobre faltante de información e ir al \textbf{\textit{paso 6}}
     &
-    6.1 En el caso en que no se puedan registrar los resultados, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de registración''}
+    8.1 En el caso en que no se puedan registrar los resultados, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de registración''}
     \\
     
     \hline
-    7 Fin de CU
+    9 Fin de CU
     & \\
     \hline
   \end{tabular}
@@ -438,7 +445,7 @@
 
 \noindent\textbf{Caso de Uso: Ingresando número de mesa}\\
 \textbf{Actor: } Presidente de mesa.\\
-\textbf{Pre: } Los comicios se encuentran cerrados.\\
+\textbf{Pre: } Los comicios se encuentran abiertos.\\
 \textbf{Post: } Se ingresa el número de mesa.\\
 \begin{table}[H]
   \centering
@@ -453,20 +460,20 @@
     & \\
     
     \hline
-    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
+    2. La \textbf{\textit{máquina de sufragio}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
     &
     \\
     
     \hline
-    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de presidente de mesa}.
+    3 La \textbf{\textit{máquina de sufragio}} verifica que sea una \textit{boleta de presidente de mesa}.
     & 
-    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de boleta''}
     \\
     
     \hline
-    4 El \textbf{\textit{SVE}} le brinda a la persona, las opciones de \textit{''abrir comicios''}, \textit{''cerrar comicios''}, \textit{''ingresar resultados''} y \textit{''ingresar número de mesa''}.
+    4 El \textbf{\textit{máquina de sufragio}} le brinda a la persona, las opciones de \textit{''abrir comicios''}, \textit{''cerrar comicios''}, \textit{''ingresar resultados''} y \textit{''ingresar número de mesa''}.
     & 
-    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de interfaz''}
     \\
     
     \hline
@@ -478,9 +485,9 @@
     \\
     
     \hline
-    6. El \textbf{\textit{SVE}} registra el número de mesa.
+    6. El \textbf{\textit{máquina de sufragio}} registra el número de mesa para todos los votos siguientes hasta que sea modificado el número de mesa nuevamente.
     &
-    6.1 En el caso en que no se puedan registrar los resultados, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de registración''}
+    6.1 En el caso en que no se puedan registrar los resultados, el \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de registración''}
     \\
     
     \hline
@@ -508,20 +515,20 @@
     & \\
     
     \hline
-    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
+    2. La \textbf{\textit{máquina de sufragio}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
     &
     \\
     
     \hline
-    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de encargado de maquina}.
+    3 La \textbf{\textit{máquina de sufragio}} verifica que sea una \textit{boleta de encargado de maquina}.
     & 
-    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de boleta''}
     \\
     
     \hline
-    4 El \textbf{\textit{SVE}} le brinda a la persona, las opciones de \textit{''actualizar software''} y \textit{''actualizar base de datos''}.
+    4 La \textbf{\textit{máquina de sufragio}} le brinda a la persona, las opciones de \textit{''actualizar software''} y \textit{''actualizar base de datos''}.
     & 
-    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de interfaz''}
     \\
     
     \hline
@@ -529,9 +536,9 @@
     & \\
     
     \hline
-    6. El \textbf{\textit{SVE}} descarga el software que se encuentra en el repositorio y actualiza el software en las maquina.
+    6. El \textbf{\textit{SVE}} descarga el software que se encuentra en el repositorio y actualiza el software en las máquina.
     &
-    6.1 En el caso en que no se pueda descargar y actualizar el software, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de actualización''}
+    6.1 En el caso en que no se pueda descargar y actualizar el software, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de actualización''}
     \\
     
     \hline
@@ -560,20 +567,20 @@
     & \\
     
     \hline
-    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
+    2. La \textbf{\textit{máquina de sufragio}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
     &
     \\
     
     \hline
-    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de encargado de maquina}.
+    3 La \textbf{\textit{máquina de sufragio}} verifica que sea una \textit{boleta de encargado de maquina}.
     & 
-    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    3.1 En el caso que no sea una boleta válida, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de boleta''}
     \\
     
     \hline
-    4 El \textbf{\textit{SVE}} le brinda a la persona, las opciones de \textit{''actualizar software''} y \textit{''actualizar base de datos''}.
+    4 La \textbf{\textit{máquina de sufragio}} le brinda a la persona, las opciones de \textit{''actualizar software''} y \textit{''actualizar base de datos''}.
     & 
-    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    4.1 En el caso en que no se pueda mostrar la información necesaria, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de interfaz''}
     \\
     
     \hline
@@ -581,9 +588,9 @@
     & \\
     
     \hline
-    6. El \textbf{\textit{SVE}} descarga la base de datos y se actualiza en las maquina.
+    6. La \textbf{\textit{máquina de sufragio}} descarga la base de datos del \textbf{\textit{Centro de Cómputo Nacional}} y se actualiza en las máquina.
     &
-    6.1 En el caso en que no se puedan actualizar los datos, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de actualización''}
+    6.1 En el caso en que no se puedan actualizar los datos, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de actualización''}
     \\
     
     \hline
@@ -613,20 +620,20 @@
     & \\
     
     \hline
-    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
+    2. La \textbf{\textit{máquina de sufragio}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
     &
     \\
     
     \hline
-    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de fiscal}.
+    3 La \textbf{\textit{máquina de sufragio}} verifica que sea una \textit{boleta de fiscal}.
     & 
-    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    3.1 En el caso que no sea una boleta válida, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de boleta''}
     \\
     
     \hline
-    4 El \textbf{\textit{SVE}} le brinda a la persona, la opción de \textit{''consultar resultados''}.
+    4 La \textbf{\textit{máquina de sufragio}} le brinda a la persona, la opción de \textit{''consultar resultados''}.
     & 
-    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    4.1 En el caso en que no se pueda mostrar la información necesaria, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de interfaz''}
     \\
     
     \hline
@@ -634,9 +641,9 @@
     & \\
     
     \hline
-    6. El \textbf{\textit{SVE}} brinda los resultados.
+    6. La \textbf{\textit{máquina de sufragio}} brinda los resultados de la elección cargados hasta el momento.
     &
-    6.1 En el caso en que no se puedan consultar los resultados, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error en la consulta de datos''}
+    6.1 En el caso en que no se puedan consultar los resultados, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error en la consulta de datos''}
     \\
     
     \hline
@@ -650,7 +657,7 @@
 
 \noindent\textbf{Caso de Uso: Consultando candidatos}\\
 \textbf{Actor: } Fiscal.\\
-\textbf{Pre: } Se cerraron los comicios.\\
+\textbf{Pre: } True.\\
 \textbf{Post: } Se consultaron los candidatos.\\
 \begin{table}[H]
   \centering
@@ -665,20 +672,20 @@
     & \\
     
     \hline
-    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
+    2. La \textbf{\textit{máquina de sufragio}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
     &
     \\
     
     \hline
-    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de fiscal}.
+    3 La \textbf{\textit{máquina de sufragio}} verifica que sea una \textit{boleta de fiscal}.
     & 
-    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    3.1 En el caso que no sea una boleta válida, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de boleta''}
     \\
     
     \hline
-    4 El \textbf{\textit{SVE}} le brinda a la persona, la opción de \textit{''consultar candidatos''}.
+    4 La \textbf{\textit{máquina de sufragio}} le brinda a la persona, la opción de \textit{''consultar candidatos''}.
     & 
-    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
+    4.1 En el caso en que no se pueda mostrar la información necesaria, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de interfaz''}
     \\
     
     \hline
@@ -686,9 +693,9 @@
     & \\
     
     \hline
-    6. El \textbf{\textit{SVE}} brinda los candidatos.
+    6. La \textbf{\textit{máquina de sufragio}} brinda los candidatos que tiene cargado.
     &
-    6.1 En el caso en que no se puedan consultar los candidatos, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error en la consulta de datos''}
+    6.1 En el caso en que no se puedan consultar los candidatos, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error en la consulta de datos''}
     \\
     
     \hline
@@ -714,38 +721,17 @@
     Curso Normal & Curso Alternativo \\
     \hline
     \hline    
-    1. El \textbf{\textit{Encargado del CCN}} ingresa la \textit{boleta de encargado del CCN}. 
+    1. El \textbf{\textit{Encargado del CCN}} carga los datos correspondientes a los candidatos y al padrón en el servidor del \textbf{\textit{Centro de Cómputos Nacional}}
     & \\
     
     \hline
-    2. El \textbf{\textit{SVE}} brinda toda la información en este CU, tanto por pantalla como por audio a través de una salida por auricular.
-    &
-    \\
-    
-    \hline
-    3 El \textbf{\textit{SVE}} verifica que sea una \textit{boleta de encargado del CCN}.
+    2 El sistema verifica que sea ambas cargas estén en formato correcto.
     & 
-    3.1 En el caso que no sea una boleta válida, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de boleta''}
+    2.1 En el caso que no sea un formato valído, el sistema entrega el mensaje de \textit{''Error de formato''}. Ir al \textbf{\textit{paso 1}}.
     \\
-    
+       
     \hline
-    4 El \textbf{\textit{SVE}} le brinda a la persona, la opción de \textit{''cargar padrón y candidatos''}.
-    & 
-    4.1 En el caso en que no se pueda mostrar la información necesaria, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de interfaz''}
-    \\
-    
-    \hline
-    5 El \textbf{\textit{Encargado de la maquina}} elije la opcion de \textit{''cargar padrón y candidatos''}.
-    & \\
-    
-    \hline
-    6. El \textbf{\textit{SVE}} registra el padrón y los candidatos.
-    &
-    6.1 En el caso en que no se puedan registrar el padrón y los candidatos, el \textbf{\textit{SVE}} entrega el mensaje de \textit{''Error de registración''}
-    \\
-    
-    \hline
-    7 Fin de CU
+    3 Fin de CU
     & \\
     \hline
   \end{tabular}
