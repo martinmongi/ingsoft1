@@ -794,18 +794,63 @@
 \end{itemize}
 
 \subsection{Diagrama de Actividad}
-Una aclaracion pertinente de los diagramas de actividad es lo referente al abuso de notación en lo que refiere a la cardinalidad de los presidentes de mesa y de los votantes. En particular, como se puede ver en el diagrama que habla del momento previo a la votaci\'on propiamente dicha donde se preparan todos los elementos que componen la infraestructura base para llevar a cabo la votaci\'on, hay al final de este descripto en actividades un \'unico inicio de la votaci\'on por parte de un un unico presidente de mesa (a saber: cada presidente de mesa abre su correspondiente habilitando la m\'aquina de sufragios asociada). Por cuestiones de simplificaci\'on asumimos que se sobre entiende que ese flujo de actividades no corresponde unicamente a un solo presidente de mesa, sino a todos ellos.
-A su vez, ocurre lo mismo con los votantes que llegan a las diferentes mesas: para representar el flujo de un votante/auditor que viene a votar/auditar anunciandose en la m\'aquina nos limitamos a mostrar el flujo de un \'unico votante/auditor y generalizarlo para todos ellos; para simplificar el gr\'afico y porque no aporta nada intentar demostrar que la cardinalidad es superior a uno para estos conjuntos de actores en un diagrama de actividad. 
-Una aclaraci\'on m\'as, que habla de las actividades que son opcionales y que pueden ocurrir en cualquier momento del flujo establecido de actividades del sistema, es que dichas actividades fueron ubicadas de manera arbitraria en el diagrama en cuesti\'on pero manteniendo cierta coherencia con la l\'ogica, es decir: dichas actividades fueron situadas en momentos del diagrama donde tendr\'ia mayor sentido de que puedan llevarse a cabo que si fueran colocadas en otros sitios. (Con estas actividades nos referimos a la opcionalidad de aparici\'on, o no, de un auditor para comprobar el hardware y software de la m\'aquina de sufragios particular. Y, adem\'as, la actividad relacionada con la consulta del padr\'on que puede, o no, realizar un votante).\\
+A continuación se presentarán los diagramas de actividad. Luego de ellos, se hace una pequeña aclaración sobre factores que se tuvieron en cuenta a la hora de realizarlos:
 
-Como conclusiones, notamos relaciones clave entre el diagrama de actividad y el digrama de contexto, entre el diagrama de actividad y el diagrama conceptual y entre el diagrama de actividad y el diagrama de casos de uso: Notamos que el diagrama de actividad tiene como principal funci\'on darle un orden a los eventos que se producen entre los actores activos de estos y los actores que controlan dichos eventos de manera pasiva. Si bien en el diagrama de contexto aparecen todos los eventos que pueden ocurrir en el sistema en su conjunto entre los diferentes actores, este no tiene como finalidad darle un orden y ni una coherencia a dichos eventos, para esto se utiliza el diagrama de actividad que describir\'a dicho orden de ocurrencia de los eventos: entonces, el diagrama de contexto se encarga de listar los eventos entre todo par de actores y el digrama de actividad da orden a los mismos.\\
-Haciendo menci\'on ahora del diagrama conceptual, concluimos algo que se desprende  de los primeros p\'arrafos de esta secci\'on, que es que el diagrama conceptual da a conocer la cardinalidad de los elementos/actores presentes en el sistema y define las relaciones de cardinalidad entre estos, dandole de esta manera una coherencia que en el diagrama de actividad no puede ser representada (al menos no de manera directa) ni es relevante representar ya que este se abstrae completamente de este detalle para solamente indicar el flujo de actividades/eventos que ocurren entre actores, sin hacer menci\'on alguna a cuantos de estos participan en dichos eventos. De alguna manera, se 'aplana' la cardinalidad de los actores en el diagrama de actividad para concentrarse \'unicamente en la especificaci\'on de los flujos normales de actividades del sistema.\\
-Por otra parte, notamos que el diagrama de casos de uso se abstrae casi completamente del comportamiento y flujo de actividades del sistema en su conjunto para concentrarse particularmente en la descripci\'on un poco m\'as especifica y formal del funcionamiento del software que orquestar\'a todos los elementos que conforman el sistema completo. Adem\'as, dicho diagrama de casos de uso da a entender los puntos de acceso que tienen los actores con el software del sistema; no necesariamente todos los actores lo utilizan a dicho software por lo que todo flujo del sistema que ocurra ajeno al software del mismo no se ver\'a reflejado en el diagrama de actividades.\\
+\subsubsection{Previo al inicio de la elección}
+
+\vspace{\baselineskip}
+    \begin{center}
+                \includegraphics[scale=0.25]{imagenes/actividad/PreVotacion.jpg}
+                \\
+                \vspace{1pt}
+                \footnotesize\textit{Diagrama de Actividad previo a la elección}
+        \end{center}
+\vspace{\baselineskip}
+
+
+Una aclaracion pertinente de los diagramas de actividad es lo referente al abuso de notación en lo que refiere a la cardinalidad de los presidentes de mesa y de los votantes. En particular, como se podrá ver en el diagrama que habla del momento previo a la votaci\'on, donde se preparan todos los elementos que componen la infraestructura base para llevar a cabo la votaci\'on, hay descripto en actividades un \'unico inicio de la votaci\'on por parte de un un único presidente de mesa (como se vio en el caso de uso, cada presidente de mesa abre su correspondiente habilitando la m\'aquina de sufragios asociada). Por cuestiones de simplicidad, asumimos que ese flujo de actividades no corresponde únicamente a un solo presidente de mesa, sino a todos ellos.
+
+\subsubsection{Votación}
+\vspace{\baselineskip}
+    \begin{center}
+                \includegraphics[scale=0.32]{imagenes/actividad/LlegadadeVotante-auditor.jpg}
+                \\
+                \vspace{1pt}
+                \footnotesize\textit{Diagrama de Actividad durante la votación}
+        \end{center}
+\vspace{\baselineskip}
+
+\par 
+A su vez, ocurre lo mismo con los votantes que llegan a las diferentes mesas: para representar el flujo de un votante/auditor que viene a votar/auditar anunciandose en la m\'aquina nos limitamos a mostrar el flujo de un \'unico votante/auditor y generalizarlo para todos ellos; para simplificar el gr\'afico y porque no aporta nada intentar demostrar que la cardinalidad es superior a uno para estos conjuntos de actores en un diagrama de actividad. 
+\par
+Una aclaraci\'on m\'as, que habla de las actividades que son opcionales y que pueden ocurrir en cualquier momento del flujo establecido de actividades del sistema, es que dichas actividades fueron ubicadas de manera arbitraria en el diagrama en cuesti\'on pero manteniendo cierta coherencia con la l\'ogica, es decir: dichas actividades fueron situadas en momentos del diagrama donde tendr\'ia mayor sentido de que puedan llevarse a cabo que si fueran colocadas en otros sitios. (Con estas actividades nos referimos a la opcionalidad de aparici\'on, o no, de un auditor para comprobar el hardware y software de la m\'aquina de sufragios particular. Y, adem\'as, la actividad relacionada con la consulta del padr\'on que puede, o no, realizar un votante).
+
+\subsubsection{Posterior al cierre de la votación}
+
+\vspace{\baselineskip}
+    \begin{center}
+                \includegraphics[scale=0.30]{imagenes/actividad/CierredeVotacionyConteodeVotos.jpg}
+                \\
+                \vspace{1pt}
+                \footnotesize\textit{}
+        \end{center}
+\vspace{\baselineskip}
+
 
 \subsection{FSM}
 Como se mencionó previamente, nuestro sistema de voto electr\'onico cuenta con varios servidores locales. Cada uno de ellos es instalado en un colegio, para que las m\'aquinas emisoras de sufragios electr\'onicos puedan comunicarse con su servidor correspondiente. Por simplicidad, optamos por hacer el diagrama FSM de los servidores locales sobre uno solo de ellos y luego el FSM de las m\'aquinas emisoras de sufragios electr\'onicos sobre todas las m\'aquinas que corresponden a un mismo servidor. Pues para la representación general de nuestro sistema seria la repetici\'on de este escenario varias veces. Sin embargo, para el FSM de el Centro de Cómputo Nacional lo hicimos sobre la totalidad de los servidores locales para poder hacer una correcta representaci\'on.
 
 \section{Discusión}
+
+Tanto para los diagramas de actividad como para los FSM, nos encontramos el problema de la cardinalidad de elementos/actores en el sistema. En todas, tal como se mencionó, se abstrajo la idea para que sea más fácil de representar como también de comprender. Esto fue posible dado que existe un diagrama de clases que se encarga de brindar la cardinalidad faltante en los demás. De esta forma, con una conjunción de diagramas, se puede apreciar como las actividades y los estados que se modelan en realidad aplican para varios elementos en conjunto, sin necesidad de ensuciar los diagramas. 
+\par
+ De esta manera, ambos diagramas pudieron representar lo que realmente debían (el flujo de eventos que suceden entre actores y los cambios de estado en el diagrama de FSM).
+\par 
+Con el diagrama de caso de usos, decidimos enfocarnos en cómo funciona la interacción de los actores con nuestro sistema (en especial, con la máquina de sufragios, esencial para poder realizar la votación). A través del mismo pudimos revelar funcionalidad que deben poseer las partes de nuestro sistema.
+\par 
+El diagrama de actividad nos permitió modelar todo el funcionamiento por fuera del sistema realizado. Es decir, nos permitió explicar el proceso de votación, desde un comienzo hasta el final. Todos los eventos obtenidos a partir del diagrama de contexto pudieron ser organizados de manera tal de explicar el orden de los mismos. De esta forma, los diagramas de actividad se centraron en expresar esto.
+\par 
+Por otro lado, el concepto de resultados se decidió dejar de lado en el diagrama de clases debido a que el foco de esto se realizaba en los casos de uso correspondientes a las búsquedas de información a través de la página web. 
 	
 \section{Conclusión}
 	Uno de los factores que consideramos interesantes y que ayudaron mucho a la hora de realizar el trabajo práctico fue la posibilidad de diferenciar partes de la especificación a partir de distintos diagramas. De esta forma, a través de la especialidad de cada diagrama se pueden mostrar distintos aspectos del problema sin perder completitud. 
