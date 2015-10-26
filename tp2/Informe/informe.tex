@@ -746,7 +746,7 @@
                 \includegraphics[scale=0.25]{imagenes/clases/DiagramadeClases.png}
                 \\
                 \vspace{1pt}
-                \footnotesize\textit{}
+                \footnotesize\textit{Diagrama de Clases}
         \end{center}
 \vspace{\baselineskip}
 
@@ -832,13 +832,46 @@ Una aclaraci\'on m\'as, que habla de las actividades que son opcionales y que pu
                 \includegraphics[scale=0.30]{imagenes/actividad/CierredeVotacionyConteodeVotos.jpg}
                 \\
                 \vspace{1pt}
-                \footnotesize\textit{}
+                \footnotesize\textit{Diagrama de Actividad una vez finalizada la votación}
         \end{center}
 \vspace{\baselineskip}
 
 
 \subsection{FSM}
 Como se mencionó previamente, nuestro sistema de voto electr\'onico cuenta con varios servidores locales. Cada uno de ellos es instalado en un colegio, para que las m\'aquinas emisoras de sufragios electr\'onicos puedan comunicarse con su servidor correspondiente. Por simplicidad, optamos por hacer el diagrama FSM de los servidores locales sobre uno solo de ellos y luego el FSM de las m\'aquinas emisoras de sufragios electr\'onicos sobre todas las m\'aquinas que corresponden a un mismo servidor. Pues para la representación general de nuestro sistema seria la repetici\'on de este escenario varias veces. Sin embargo, para el FSM de el Centro de Cómputo Nacional lo hicimos sobre la totalidad de los servidores locales para poder hacer una correcta representaci\'on.
+
+\par 
+\subsubsection{Centro Nacional de Cómputo}
+\vspace{\baselineskip}
+    \begin{center}
+                \includegraphics[scale=0.50]{imagenes/fsm/FSMCCN.png}
+                \\
+                \vspace{1pt}
+                \footnotesize\textit{}
+        \end{center}
+\vspace{\baselineskip}
+
+\subsubsection{Servidor Local}
+
+\vspace{\baselineskip}
+    \begin{center}
+                \includegraphics[scale=0.40]{imagenes/fsm/FSMservidorlocal.png}
+                \\
+                \vspace{1pt}
+                \footnotesize\textit{}
+        \end{center}
+\vspace{\baselineskip}
+
+\subsubsection{Máquina de Sufragio}
+
+\vspace{\baselineskip}
+    \begin{center}
+                \includegraphics[scale=0.35]{imagenes/fsm/FSMmaquinaEmisoraDeSufragios.png}
+                \\
+                \vspace{1pt}
+                \footnotesize\textit{}
+        \end{center}
+\vspace{\baselineskip}
 
 \section{Discusión}
 
@@ -851,6 +884,8 @@ Con el diagrama de caso de usos, decidimos enfocarnos en cómo funciona la inter
 El diagrama de actividad nos permitió modelar todo el funcionamiento por fuera del sistema realizado. Es decir, nos permitió explicar el proceso de votación, desde un comienzo hasta el final. Todos los eventos obtenidos a partir del diagrama de contexto pudieron ser organizados de manera tal de explicar el orden de los mismos. De esta forma, los diagramas de actividad se centraron en expresar esto.
 \par 
 Por otro lado, el concepto de resultados se decidió dejar de lado en el diagrama de clases debido a que el foco de esto se realizaba en los casos de uso correspondientes a las búsquedas de información a través de la página web. 
+\oar 
+Finalmente, con el diagrama de FSM lo utilizamos para explicar la interacción entre los tres tipos de piezas de hardware que utilizamos (máquinas de sufragio, servidores locales y el Centro de Cómputo Nacional). Esto no fue especificado previamente más allá de ser conceptos importantes en nuestro diagrama de clases. Consideramos que mostrar la relación entre ambos con FSM es la decisión acertada debido a que son elementos sincronizados que envían, reciben y esperan información. Por lo tanto, tener un modelo de estados con transiciones hace muy declarativo el funcionamiento interactivo de los componentes que conforman nuestro sistema.
 	
 \section{Conclusión}
 	Uno de los factores que consideramos interesantes y que ayudaron mucho a la hora de realizar el trabajo práctico fue la posibilidad de diferenciar partes de la especificación a partir de distintos diagramas. De esta forma, a través de la especialidad de cada diagrama se pueden mostrar distintos aspectos del problema sin perder completitud. 
