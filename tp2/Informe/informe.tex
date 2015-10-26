@@ -65,6 +65,9 @@
 	Además se busca proveer todos los mecanimos necesarios para asegurar el derecho de voto a todos los Electores. Se considerarán las necesidades de los no videntes y personas con movilidad reducida. 
 	
 \section{Presunciones}
+	Dada la estructura del sistema que se propuso en el trabajo práctico anterior, donde existen máquinas de sufragio comunicadas con servidores locales (por escuela) que a su vez se engloban bajo el Centro Nacional de Cómputo, asumimos que no van a ocurrir problemas con la comunicación entre estos aparatos (falta de Internet, rotura de los cables de red e imposibilidad de utilización de Wi-Fi). 
+\par Por otro lado, el sistema permitirá el voto de personas con movilidad reducida así como también de personas no videntes. En caso de sufrir alguna discapacidad que no se contempla, el elector está justificado a no votar o a realizarlo con ayuda de un tutor.
+\par Dado que el sistema permite el voto de personas con movilidad reducida, asumimos que las escuelas poseen acceso a, por lo menos, la planta baja para personas en silla de ruedas. 
 
 \section{Vistas}
 	A continuación se visualizarán los diagramas realizados junto con la explicación necesaria para cada tipo:
@@ -805,11 +808,20 @@ Haciendo menci\'on ahora del diagrama conceptual, concluimos algo que se despren
 Por otra parte, notamos que el diagrama de casos de uso se abstrae casi completamente del comportamiento y flujo de actividades del sistema en su conjunto para concentrarse particularmente en la descripci\'on un poco m\'as especifica y formal del funcionamiento del software que orquestar\'a todos los elementos que conforman el sistema completo. Adem\'as, dicho diagrama de casos de uso da a entender los puntos de acceso que tienen los actores con el software del sistema; no necesariamente todos los actores lo utilizan a dicho software por lo que todo flujo del sistema que ocurra ajeno al software del mismo no se ver\'a reflejado en el diagrama de actividades.\\
 
 \subsection{FSM}
-Nuestro sistema de voto electr\'onico cuenta con varios servidores locales. Cada uno de ellos es instalado en un colegio, para que las m\'aquinas emisoras de sufragios electr\'onicos puedan comunicarse con su servidor correspondiente. Por simplicidad, optamos por hacer el diagrama FSM de los servidores locales sobre uno solo de ellos y luego el FSM de las m\'aquinas emisoras de sufragios electr\'onicos sobre todas las m\'aquinas que corresponden a un mismo servidor. Pues para la representación general de nuestro sistema seria la repetici\'on de este escenario varias veces. Sin embargo, para el FSM de el centro de computo nacional lo hicimos sobre la totalidad de los servidores locales para poder hacer una correcta representaci\'on.
+Como se mencionó previamente, nuestro sistema de voto electr\'onico cuenta con varios servidores locales. Cada uno de ellos es instalado en un colegio, para que las m\'aquinas emisoras de sufragios electr\'onicos puedan comunicarse con su servidor correspondiente. Por simplicidad, optamos por hacer el diagrama FSM de los servidores locales sobre uno solo de ellos y luego el FSM de las m\'aquinas emisoras de sufragios electr\'onicos sobre todas las m\'aquinas que corresponden a un mismo servidor. Pues para la representación general de nuestro sistema seria la repetici\'on de este escenario varias veces. Sin embargo, para el FSM de el Centro de Cómputo Nacional lo hicimos sobre la totalidad de los servidores locales para poder hacer una correcta representaci\'on.
 
 \section{Discusión}
 	
 \section{Conclusión}
+	Uno de los factores que consideramos interesantes y que ayudaron mucho a la hora de realizar el trabajo práctico fue la posibilidad de diferenciar partes de la especificación a partir de distintos diagramas. De esta forma, a través de la especialidad de cada diagrama se pueden mostrar distintos aspectos del problema sin perder completitud. 
+\par
+Utilizar un diagrama en particular para explicar cierta parte del problema permitió, por un lado, simplificar varios diagramas y dar un panorama específico y completo del problema. 
+\par
+ Encontramos que el diagrama de contexto resultó esencial para, a partir de él, realizar todos los gráficos. La idea general de la interacción del mundo con nuestro sistema permitió poder profundizar sobre ella sin perder la completitud que se trató de obtener en la primera instancia del trabajo práctico.
+\par
+ Por otro lado, como también sucedió en el primer trabajo práctico, al tratar más con el problema tuvimos que preguntarnos cosas que no lo habíamos hecho previamente, en especial para los casos de uso, donde tuvimos que plantearnos cómo funcionaría el sistema (en particular, las máquinas de sufragio).
+\par
+ Consideramos que las diferentes capas que atravesamos a través de los trabajos prácticos nos permitieron entender el problema desde distintos puntos de vista. A su vez, consideramos que varios de los pasos transcurridos son muy importantes a la hora de generar una especificación y de (aún más importante) entender un problema.
 
 	%~ \newpage
 	%~ \bibliographystyle{plain}
