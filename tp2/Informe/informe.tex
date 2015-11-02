@@ -79,7 +79,7 @@
         \end{center}
 \vspace{\baselineskip}
 
-
+\clearpage
 \subsection{Diagrama de Caso de Uso}
 
 \vspace{\baselineskip}
@@ -95,7 +95,7 @@
 
 \noindent\textbf{Detalle de Casos de Uso:}\\
 
-\noindent\textbf{Caso de Uso: Votando candidatos}\\
+\noindent\textbf{Caso de Uso: 1. Votando candidatos}\\
 \textbf{Actor: } Persona.\\
 \textbf{Pre: } Se abrieron los comicios.\\
 \textbf{Post: } La persona logra registrar su voto.\\
@@ -129,11 +129,11 @@
     \\
     
     \hline
-    5 La \textbf{\textit{persona}} elije una de las dos opciones mostradas en el paso anterior.
+    5 La \textbf{\textit{persona}} elige una de las dos opciones mostradas en el paso anterior.
     & \\
     
     \hline
-    6 Si la \textbf{\textit{persona}} eligió lista completa, Ir al \textbf{\textit{paso 14}}.
+    6 Si la \textbf{\textit{persona}} eligió lista completa, Ir al \textbf{\textit{paso 15}}.
     & \\
     
     \hline
@@ -143,7 +143,7 @@
     \\
     
     \hline
-    8 La \textbf{\textit{persona}} elije una de las opciones mostradas en el paso anterior.
+    8 La \textbf{\textit{persona}} elige una de las opciones mostradas en el paso anterior.
     & \\
     
     \hline
@@ -165,22 +165,27 @@
     \\
     
     \hline
-    13 Ir al  \textbf{\textit{paso 16}}
-    & \\
-    
-    \hline
-    14 La \textbf{\textit{máquina de sufragio}} muestra como opciones distintas a cada uno de las listas completas de los candidatos y otra opción de \textit{''votar en blanco''}.
+    13 La \textbf{\textit{máquina de sufragio}} imprime la boleta con la selección de candidatos incluyendo el caso de uso \textbf{2. Imprimiendo boleta}.
     & 
-    14.1 En el caso en que no se pueda mostrar la información necesaria, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de interfaz''}
     \\
     
     \hline
-    15 La \textbf{\textit{persona}} elije una de las opciones mostradas en el paso anterior. Ir al \textbf{\textit{paso 10}}.
+    14 Ir al  \textbf{\textit{paso 17}}
+    & \\
+    
+    \hline
+    15 La \textbf{\textit{máquina de sufragio}} muestra como opciones distintas a cada uno de las listas completas de los candidatos y otra opción de \textit{''votar en blanco''}.
+    & 
+    15.1 En el caso en que no se pueda mostrar la información necesaria, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de interfaz''}
+    \\
+    
+    \hline
+    16 La \textbf{\textit{persona}} elige una de las opciones mostradas en el paso anterior. Ir al \textbf{\textit{paso 10}}.
     & \\
     \hline
 
     \hline
-    16 Fin de Caso de Uso.
+    17 Fin de Caso de Uso.
     & \\
   \end{tabular}
 \egroup
@@ -188,7 +193,7 @@
 
 
 \newpage
-\noindent\textbf{Caso de Uso: Imprimiendo boleta}\\
+\noindent\textbf{Caso de Uso: 2. Imprimiendo boleta}\\
 \textbf{Actor: } Persona.\\
 \textbf{Pre: } Se confirmó el voto y se encuentra ingresada la boleta de votación.\\
 \textbf{Post: } Se imprime la boleta.\\
@@ -205,7 +210,7 @@
     & \\
     
     \hline
-    2. La \textbf{\textit{máquina de sufragio}} imprime la boleta.
+    2. La \textbf{\textit{máquina de sufragio}} imprime en la boleta los candidatos elegidos por la \textbf{\textit{persona}} y devuelve la boleta.
     &
     2.1 En el caso en que no se pueda imprimir la boleta, la \textbf{\textit{máquina de sufragio}} entrega el mensaje de \textit{''Error de impresión''}
     \\
@@ -219,7 +224,7 @@
 \end{table}
 
 
-\noindent\textbf{Caso de Uso: Actualizando información de página web}\\
+\noindent\textbf{Caso de Uso: 3. Actualizando resultados}\\
 \textbf{Actor: } Página web.\\
 \textbf{Pre: } Se cerraron los comicios.\\
 \textbf{Post: } Se actualiza la información de los resultados en la página web.\\
@@ -247,7 +252,7 @@
 \end{table}
 
 
-\noindent\textbf{Caso de Uso: Actualizando padrón y candidatos}\\
+\noindent\textbf{Caso de Uso: 4. Actualizando padrón y candidatos}\\
 \textbf{Actor: } Página web.\\
 \textbf{Pre: } Faltan por lo menos 24hs para la apertura de los comicios.\\
 \textbf{Post: } Se actualiza la información del padrón y de los candidatos en la página web.\\
@@ -276,7 +281,7 @@
 
 
 \newpage
-\noindent\textbf{Caso de Uso: Abriendo comicios}\\
+\noindent\textbf{Caso de Uso: 5. Abriendo comicios}\\
 \textbf{Actor: } Presidente de mesa.\\
 \textbf{Pre: } Los comicios no se encuentran abiertos.\\
 \textbf{Post: } Se abren los comicios.\\
@@ -328,7 +333,7 @@
 \end{table}
 
 
-\noindent\textbf{Caso de Uso: Cerrando comicios}\\
+\noindent\textbf{Caso de Uso: 6. Cerrando comicios}\\
 \textbf{Actor: } Presidente de mesa.\\
 \textbf{Pre: } Los comicios se encuentran abiertos.\\
 \textbf{Post: } Se cierran los comicios.\\
@@ -381,7 +386,7 @@
 
 
 \newpage
-\noindent\textbf{Caso de Uso: Ingresando resultados}\\
+\noindent\textbf{Caso de Uso: 7. Ingresando resultados}\\
 \textbf{Actor: } Presidente de mesa.\\
 \textbf{Pre: } Los comicios se encuentran cerrados.\\
 \textbf{Post: } Se registran los resultados.\\
@@ -441,7 +446,7 @@
 \end{table}
 
 
-\noindent\textbf{Caso de Uso: Ingresando número de mesa}\\
+\noindent\textbf{Caso de Uso: 8. Ingresando número de mesa}\\
 \textbf{Actor: } Presidente de mesa.\\
 \textbf{Pre: } Los comicios se encuentran abiertos.\\
 \textbf{Post: } Se ingresa el número de mesa.\\
@@ -475,7 +480,7 @@
     \\
     
     \hline
-    5 El \textbf{\textit{presidente de mesa}} elije la opcion de \textit{''ingresar número de mesa''}.
+    5 El \textbf{\textit{presidente de mesa}} elige la opcion de \textit{''ingresar número de mesa''}.
     & \\
     
     \hline
@@ -496,7 +501,7 @@
 \egroup
 \end{table}
 
-\noindent\textbf{Caso de Uso: Actualizando software de la maquina emisora de sufragios}\\
+\noindent\textbf{Caso de Uso: 9. Actualizando software de la maquina emisora de sufragios}\\
 \textbf{Actor: } Encargado de la maquina.\\
 \textbf{Pre: } No se abrieron los comicios.\\
 \textbf{Post: } Se actualiza el software de la maquina emisora de sufragios.\\
@@ -530,7 +535,7 @@
     \\
     
     \hline
-    5 El \textbf{\textit{Encargado de la maquina}} elije la opcion de \textit{''actualizar software''}.
+    5 El \textbf{\textit{Encargado de la maquina}} elige la opcion de \textit{''actualizar software''}.
     & \\
     
     \hline
@@ -548,7 +553,7 @@
 \end{table}
 
 
-\noindent\textbf{Caso de Uso: Actualizando datos de maquina emisora de sufragios}\\
+\noindent\textbf{Caso de Uso: 10. Actualizando datos de maquina emisora de sufragios}\\
 \textbf{Actor: } Encargado de la maquina.\\
 \textbf{Pre: } No se abrieron los comicios.\\
 \textbf{Post: } Se actualizan los datos de la maquina emisora de sufragios.\\
@@ -582,7 +587,7 @@
     \\
     
     \hline
-    5 El \textbf{\textit{Encargado de la maquina}} elije la opcion de \textit{''actualizar base de datos''}.
+    5 El \textbf{\textit{Encargado de la maquina}} elige la opcion de \textit{''actualizar base de datos''}.
     & \\
     
     \hline
@@ -601,7 +606,7 @@
 
 
 \newpage
-\noindent\textbf{Caso de Uso: Consultando resultados}\\
+\noindent\textbf{Caso de Uso: 11. Consultando resultados}\\
 \textbf{Actor: } Fiscal.\\
 \textbf{Pre: } Se cerraron los comicios.\\
 \textbf{Post: } Se consultaron los resultados.\\
@@ -635,7 +640,7 @@
     \\
     
     \hline
-    5 El \textbf{\textit{Fiscal}} elije la opcion de \textit{''consultar resultados''}.
+    5 El \textbf{\textit{Fiscal}} elige la opcion de \textit{''consultar resultados''}.
     & \\
     
     \hline
@@ -653,7 +658,7 @@
 \end{table}
 
 
-\noindent\textbf{Caso de Uso: Consultando candidatos}\\
+\noindent\textbf{Caso de Uso: 12. Consultando candidatos}\\
 \textbf{Actor: } Fiscal.\\
 \textbf{Pre: } True.\\
 \textbf{Post: } Se consultaron los candidatos.\\
@@ -687,7 +692,7 @@
     \\
     
     \hline
-    5 El \textbf{\textit{Fiscal}} elije la opcion de \textit{''consultar candidatos''}.
+    5 El \textbf{\textit{Fiscal}} elige la opcion de \textit{''consultar candidatos''}.
     & \\
     
     \hline
@@ -706,10 +711,10 @@
 
 
 \newpage
-\noindent\textbf{Caso de Uso: Cargando padrón y candidatos}\\
+\noindent\textbf{Caso de Uso: 13. Cargando padrón}\\
 \textbf{Actor: } Encargado del CCN.\\
 \textbf{Pre: } No se abrieron los comicios.\\
-\textbf{Post: } Se cargó el padrón y los candidatos.\\
+\textbf{Post: } Se cargó el padrón.\\
 \begin{table}[H]
   \centering
 \bgroup
@@ -719,11 +724,41 @@
     Curso Normal & Curso Alternativo \\
     \hline
     \hline    
-    1. El \textbf{\textit{Encargado del CCN}} carga los datos correspondientes a los candidatos y al padrón en el servidor del \textbf{\textit{Centro de Cómputos Nacional}}
+    1. El \textbf{\textit{Encargado del CCN}} carga los datos correspondientes al padrón en el servidor del \textbf{\textit{Centro de Cómputos Nacional}}
     & \\
     
     \hline
-    2 El sistema verifica que sea ambas cargas estén en formato correcto.
+    2 El sistema verifica que sea en el formato correcto.
+    & 
+    2.1 En el caso que no sea un formato valído, el sistema entrega el mensaje de \textit{''Error de formato''}. Ir al \textbf{\textit{paso 1}}.
+    \\
+       
+    \hline
+    3 Fin de CU
+    & \\
+    \hline
+  \end{tabular}
+\egroup
+\end{table}
+
+\noindent\textbf{Caso de Uso: 14. Cargando candidatos}\\
+\textbf{Actor: } Encargado del CCN.\\
+\textbf{Pre: } No se abrieron los comicios.\\
+\textbf{Post: } Se cargaron los candidatos.\\
+\begin{table}[H]
+  \centering
+\bgroup
+\def\arraystretch{1.3}
+  \begin{tabular}{p{9cm} | p{7cm}}
+    \hline
+    Curso Normal & Curso Alternativo \\
+    \hline
+    \hline    
+    1. El \textbf{\textit{Encargado del CCN}} carga los datos correspondientes a los candidatos en el servidor del \textbf{\textit{Centro de Cómputos Nacional}}
+    & \\
+    
+    \hline
+    2 El sistema verifica que sea en el formato correcto.
     & 
     2.1 En el caso que no sea un formato valído, el sistema entrega el mensaje de \textit{''Error de formato''}. Ir al \textbf{\textit{paso 1}}.
     \\
