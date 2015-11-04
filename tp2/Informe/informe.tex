@@ -741,7 +741,9 @@
 
 \newpage
 \subsection{Diagrama de Clases}
-	A continuación se presenta el diagrama de clases:
+	A continuación se presenta el diagrama de clases. En el mismo se refleja la relación entre los conceptos más importantes del sistema. Cabe mencionar que no se modelo lo correspondiente al flujo del elector en la votación ya que el mismo se encuentra explícito en el \textit{diagrama de actividad } en la sección \textit{Votación}. 
+\par Además no se modelo el concepto de resultados ya que el mismo se explica de forma complementaria entre los \textit{Casos de Uso} y los \textit{FSM}.
+\par Luego de mostrar el diagrama, se presenta el OCL correspondiente al modelo conceptual realizado. 
 
 \vspace{\baselineskip}
     \begin{center}
@@ -793,6 +795,19 @@
 	\item Las barrios son distinguibles.
 \\	\textbf{Context: }  Barrio
 \\	\textbf{inv: } Barrio.AllInstances()$\rightarrow$forAll(barrio1, barrio2 \textbar barrio1.Id $\neq$ barrio2.IId)
+
+	\item Solo una boleta puede estar asociada a un voto por elector
+\\	\textbf{Context: }  Elector
+\\	\textbf{inv: } (self.boletas$\rightarrow$select(boleta \textbar boleta.voto.size() = 1).size()  $\leq$ 1
+
+	\item Si la máquina de sufragio no está rota, el elector sin discapacidad vota en la máquina de la mesa.
+\\	\textbf{Context: }  Elector
+\\	\textbf{inv: } \textbf{IF} (self.IsKindOf(Sin discapacidad) and self.mesa.máquina.rota = false) \textbf{THEN} (self.boletas$\rightarrow$select(boleta \textbar boleta.voto.size() = 1).first().voto.máquina.id) = self.mesa.máquina.Id \textbf{ENDIF}
+
+	\item Por mesa hay un solo elector votando al mismo tiempo.
+\\	\textbf{Context: }  Mesa
+\\	\textbf{inv: } self.electores$\rightarrow$select(elector \textbar elector.votando = true).size() = 1
+
 \end{itemize}
 
 \subsection{Diagrama de Actividad}
