@@ -842,17 +842,6 @@ A su vez, ocurre lo mismo con los votantes que llegan a las diferentes mesas: pa
 \par
 Una aclaraci\'on m\'as, que habla de las actividades que son opcionales y que pueden ocurrir en cualquier momento del flujo establecido de actividades del sistema, es que dichas actividades fueron ubicadas de manera arbitraria en el diagrama en cuesti\'on pero manteniendo cierta coherencia con la l\'ogica, es decir: dichas actividades fueron situadas en momentos del diagrama donde tendr\'ia mayor sentido de que puedan llevarse a cabo que si fueran colocadas en otros sitios. (Con estas actividades nos referimos a la opcionalidad de aparici\'on, o no, de un auditor para comprobar el hardware y software de la m\'aquina de sufragios particular. Y, adem\'as, la actividad relacionada con la consulta del padr\'on que puede, o no, realizar un votante).
 
-\subsubsection{Posterior al cierre de la votación}
-
-\vspace{\baselineskip}
-    \begin{center}
-                \includegraphics[scale=0.30]{imagenes/actividad/CierredeVotacionyConteodeVotos.jpg}
-                \\
-                \vspace{1pt}
-                \footnotesize\textit{Diagrama de Actividad una vez finalizada la votación}
-        \end{center}
-\vspace{\baselineskip}
-
 
 \subsection{FSM}
 Como se mencionó previamente, nuestro sistema de voto electr\'onico cuenta con varios servidores locales. Cada uno de ellos es instalado en un colegio, para que las m\'aquinas emisoras de sufragios electr\'onicos puedan comunicarse con su servidor correspondiente. Por simplicidad, optamos por hacer el diagrama FSM de los servidores locales sobre uno solo de ellos y luego el FSM de las m\'aquinas emisoras de sufragios electr\'onicos sobre todas las m\'aquinas que corresponden a un mismo servidor. Pues para la representación general de nuestro sistema seria la repetici\'on de este escenario varias veces. Sin embargo, para el FSM de el Centro de Cómputo Nacional lo hicimos sobre la totalidad de los servidores locales para poder hacer una correcta representaci\'on.
@@ -862,6 +851,26 @@ Como se mencionó previamente, nuestro sistema de voto electr\'onico cuenta con 
 \vspace{\baselineskip}
     \begin{center}
                 \includegraphics[scale=0.50]{imagenes/fsm/FSMCCN.png}
+                \\
+                \vspace{1pt}
+                \footnotesize\textit{}
+        \end{center}
+\vspace{\baselineskip}
+
+\subsubsection{Centro Nacional de Cómputo (proveedor de Página Web}
+\vspace{\baselineskip}
+    \begin{center}
+                \includegraphics[scale=0.50]{imagenes/fsm/FSMCCNProveedordeWebFinal.png}
+                \\
+                \vspace{1pt}
+                \footnotesize\textit{}
+        \end{center}
+\vspace{\baselineskip}
+
+\subsubsection{Página Web (Consumidor de CCN)}
+\vspace{\baselineskip}
+    \begin{center}
+                \includegraphics[scale=0.50]{imagenes/fsm/FSMWebFinal.png}
                 \\
                 \vspace{1pt}
                 \footnotesize\textit{}
