@@ -742,15 +742,24 @@
 \newpage
 \subsection{Diagrama de Clases}
 	A continuación se presenta el diagrama de clases. En el mismo se refleja la relación entre los conceptos más importantes del sistema. Cabe mencionar que no se modelo lo correspondiente al flujo del elector en la votación ya que el mismo se encuentra explícito en el \textit{diagrama de actividad } en la sección \textit{Votación}. 
-\par Además no se modelo el concepto de resultados ya que el mismo se explica de forma complementaria entre los \textit{Casos de Uso} y los \textit{FSM}.
+\par Además no se modeló el concepto de resultados ya que el mismo se explica de forma complementaria entre los \textit{Casos de Uso} y los \textit{FSM}.
 \par Luego de mostrar el diagrama, se presenta el OCL correspondiente al modelo conceptual realizado. 
 
 \vspace{\baselineskip}
     \begin{center}
-                \includegraphics[scale=0.25]{imagenes/clases/DiagramadeClases.png}
+                \includegraphics[scale=0.7, page=1]{imagenes/clases/DiagramadeClases.pdf}
                 \\
                 \vspace{1pt}
-                \footnotesize\textit{Diagrama de Clases}
+                \footnotesize\textit{Diagrama de Clases Parte Izquierda}
+        \end{center}
+\vspace{\baselineskip}
+
+\vspace{\baselineskip}
+    \begin{center}
+                \includegraphics[scale=0.7, page=2]{imagenes/clases/DiagramadeClases.pdf}
+                \\
+                \vspace{1pt}
+                \footnotesize\textit{Diagrama de Clases Parte Derecha}
         \end{center}
 \vspace{\baselineskip}
 
@@ -798,7 +807,7 @@
 
 	\item Solo una boleta puede estar asociada a un voto por elector
 \\	\textbf{Context: }  Elector
-\\	\textbf{inv: } (self.boletas$\rightarrow$select(boleta \textbar boleta.voto.size() = 1).size()  $\leq$ 1
+\\	\textbf{inv: } (self.boletas$\rightarrow$select(boleta \textbar boleta.voto.size() = 1)).size()  $\leq$ 1
 
 	\item Si la máquina de sufragio no está rota, el elector sin discapacidad vota en la máquina de la mesa.
 \\	\textbf{Context: }  Elector
@@ -807,6 +816,18 @@
 	\item Por mesa hay un solo elector votando al mismo tiempo.
 \\	\textbf{Context: }  Mesa
 \\	\textbf{inv: } self.electores$\rightarrow$select(elector \textbar elector.votando = true).size() = 1
+	
+	\item Si el elector está votando, no existe voto asociado a él.
+\\	\textbf{Context: }  Elector
+\\	\textbf{inv: } \textbf{IF} self.votando \textbf{THEN} (self.boletas$\rightarrow$select(boleta \textbar boleta.voto.size() = 1)).size() = 0 \textbf{ENDIF}
+
+	\item La persona discapacitada que decide no llegar a la mesa, vota en una máquina comodín.
+\\	\textbf{Context: }  Elector
+\\	\textbf{inv: } \textbf{IF} (self.IsKindOf(Discapacitado) and self.DecideAccederAMesa = false) \textbf{THEN} (self.boletas$\rightarrow$select(boleta \textbar boleta.voto.size() = 1).first().voto.máquina).IsKindOf(Máquina Comodín) \textbf{ENDIF}
+
+	\item Si el elector es discapacitado y decide acceder a la mesa, vota en la máquina de la mesa correspondiente en caso de no estar rota.
+\\	\textbf{Context: }  Elector
+\\	\textbf{inv: } \textbf{IF} (self.IsKindOf(Discapacitado) and self.DecideAccederAMesa and self.mesa.máquina.rota = false) \textbf{THEN} (self.boletas$\rightarrow$(select(boleta \textbar boleta.voto.size() = 1)).first().voto.máquina.id) = self.mesa.máquina.Id \textbf{ENDIF}
 
 \end{itemize}
 
