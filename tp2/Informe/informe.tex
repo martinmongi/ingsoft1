@@ -45,7 +45,7 @@
 
 \newcommand{\figurewidth}{1\textwidth}
 
-\newcommand{\tuple}[1]{\ensuremath{\left \langle #1 \right \rangle }}
+\newcommand{\tuple}[1]{\ensuremath{\left \langle #1 \right \rangle }}pdf
 \newcommand{\Ode}[1]{\small{$\mathcal{O}(#1)$}}
 
 \input{caratula.tex} 
@@ -190,7 +190,8 @@
   \end{tabular}
 \egroup
 \end{table}
-
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama se relaciona con el diagrama de actividad \textit{Previo al inicio de la elección} y con el FSM de \textit{Máquina emisora de sufragios electrónicos}.
 
 \newpage
 \noindent\textbf{Caso de Uso: 2. Imprimiendo boleta}\\
@@ -222,7 +223,8 @@
   \end{tabular}
 \egroup
 \end{table}
-
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama se relaciona con el diagrama de actividad \textit{Previo al inicio de la elección} y con el FSM de \textit{Máquina emisora de sufragios electrónicos}.\\
 
 \noindent\textbf{Caso de Uso: 3. Actualizando resultados}\\
 \textbf{Actor: } Página web.\\
@@ -250,7 +252,8 @@
     \hline
   \end{tabular}
 \end{table}
-
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama se relaciona con los diagramas FSM de \textit{Centro Nacional de Computo(proveedor de Página Web) y Página Web(consumidor de CCN)}.\\
 
 \noindent\textbf{Caso de Uso: 4. Actualizando padrón y candidatos}\\
 \textbf{Actor: } Página web.\\
@@ -278,6 +281,8 @@
     \hline
   \end{tabular}
 \end{table}
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama se relaciona con el diagrama de actividad \textit{Previo al inicio de la elección}.\\
 
 
 \newpage
@@ -308,7 +313,8 @@
   \end{tabular}
 \egroup
 \end{table}
-
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama se relaciona con el diagrama de actividad \textit{Previo al inicio de la elección} y con el FSM de \textit{Máquina emisora de sufragios electrónicos}.\\
 
 \noindent\textbf{Caso de Uso: 6. Cerrando comicios}\\
 \textbf{Actor: } Presidente de mesa.\\
@@ -342,7 +348,10 @@
   \end{tabular}
 \egroup
 \end{table}
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama se relaciona con el diagrama FSM de \textit{Máquina emisora de sufragios electrónicos}.\\
 
+\clearpage
 \noindent\textbf{Caso de Uso: 7. Ingresando resultados}\\
 \textbf{Actor: } Presidente de mesa.\\
 \textbf{Pre: } Los comicios se encuentran cerrados.\\
@@ -384,8 +393,10 @@
   \end{tabular}
 \egroup
 \end{table}
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama se relaciona con el diagrama FSM de \textit{Máquina emisora de sufragios electrónicos}.\\
 
-\clearpage
+
 \noindent\textbf{Caso de Uso: 8. Ingresando número de mesa}\\
 \textbf{Actor: } Presidente de mesa.\\
 \textbf{Pre: } Los comicios se encuentran abiertos.\\
@@ -423,7 +434,10 @@
   \end{tabular}
 \egroup
 \end{table}
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama se relaciona con los diagramas de actividad \textit{Previo al inicio de la elección y Votación}}.\\
 
+\clearpage
 \noindent\textbf{Caso de Uso: 9. Autenticándose como presidente de mesa}\\
 \textbf{Actor: } Presidente de mesa.\\
 \textbf{Pre: } True\\
@@ -465,8 +479,9 @@
   \end{tabular}
 \egroup
 \end{table}
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama se relaciona con los diagramas de actividad \textit{Previo al inicio de la elección y Votación}}.\\
 
-\clearpage
 \noindent\textbf{Caso de Uso: 10. Actualizando software de la maquina emisora de sufragios}\\
 \textbf{Actor: } Encargado de la maquina.\\
 \textbf{Pre: } No se abrieron los comicios.\\
@@ -517,9 +532,11 @@
   \end{tabular}
 \egroup
 \end{table}
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama se relaciona con el diagrama de actividad \textit{Previo al inicio de la elección}}.\\
 
 
-
+\clearpage
 \noindent\textbf{Caso de Uso: 11. Actualizando datos de maquina emisora de sufragios}\\
 \textbf{Actor: } Encargado de la maquina.\\
 \textbf{Pre: } No se abrieron los comicios.\\
@@ -570,9 +587,9 @@
   \end{tabular}
 \egroup
 \end{table}
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama se relaciona con el diagrama de actividad \textit{Previo al inicio de la elección}}.\\
 
-
-\newpage
 \noindent\textbf{Caso de Uso: 12. Consultando resultados}\\
 \textbf{Actor: } Fiscal.\\
 \textbf{Pre: } Se cerraron los comicios.\\
@@ -623,8 +640,11 @@
   \end{tabular}
 \egroup
 \end{table}
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama se relaciona con el diagrama FSM de \textit{Máquina emisora de sufragios electrónicos}.\\
 
 
+\clearpage
 \noindent\textbf{Caso de Uso: 13. Consultando candidatos}\\
 \textbf{Actor: } Fiscal.\\
 \textbf{Pre: } True.\\
@@ -675,9 +695,11 @@
   \end{tabular}
 \egroup
 \end{table}
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama se relaciona con los diagramas de actividad \textit{Previo al inicio de la elección y Votación}} y con el FSM de \textit{Máquina emisora de sufragios electrónicos}.\\
 
 
-\newpage
+
 \noindent\textbf{Caso de Uso: 14. Cargando padrón}\\
 \textbf{Actor: } Encargado del CCN.\\
 \textbf{Pre: } No se abrieron los comicios.\\
@@ -707,7 +729,11 @@
   \end{tabular}
 \egroup
 \end{table}
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama se relaciona con el diagrama de actividad \textit{Previo al inicio de la elección y Votación}.\\
 
+
+\clearpage
 \noindent\textbf{Caso de Uso: 15. Cargando candidatos}\\
 \textbf{Actor: } Encargado del CCN.\\
 \textbf{Pre: } No se abrieron los comicios.\\
@@ -737,6 +763,8 @@
   \end{tabular}
 \egroup
 \end{table}
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama se relaciona con el diagrama de actividad \textit{Previo al inicio de la elección y Votación}.\\
 
 
 \newpage
@@ -747,7 +775,7 @@
 
 \vspace{\baselineskip}
     \begin{center}
-                \includegraphics[scale=0.7, page=1]{imagenes/clases/DiagramadeClases.pdf}
+                \includegraphics[scale=0.55, page=1]{imagenes/clases/DiagramadeClases.png}
                 \\
                 \vspace{1pt}
                 \footnotesize\textit{Diagrama de Clases Parte Izquierda}
@@ -756,7 +784,7 @@
 
 \vspace{\baselineskip}
     \begin{center}
-                \includegraphics[scale=0.7, page=2]{imagenes/clases/DiagramadeClases.pdf}
+                \includegraphics[scale=0.6, page=2]{imagenes/clases/DiagramadeClases.png}
                 \\
                 \vspace{1pt}
                 \footnotesize\textit{Diagrama de Clases Parte Derecha}
@@ -831,6 +859,8 @@
 
 \end{itemize}
 
+
+\clearpage
 \subsection{Diagrama de Actividad}
 A continuación se presentarán los diagramas de actividad. Luego de ellos, se hace una pequeña aclaración sobre factores que se tuvieron en cuenta a la hora de realizarlos:
 
@@ -845,6 +875,11 @@ A continuación se presentarán los diagramas de actividad. Luego de ellos, se h
         \end{center}
 \vspace{\baselineskip}
 
+\noindent\textbf{Trazabilidad}\\
+
+Este diagrama se relaciona con los casos de uso de \textit{Cargando Padrón(14), Cargando Candidatos(15), Consultando candidatos (13), Actualizando padrón y candidatos(4), Actualizando software de la maquina emisora de sufragios}(10), Actualizando datos de maquina emisora de sufragios(11), Ingresando número de mesa(8), Autenticándose como presidente de mesa(9) y Abriendo comicios(5)}.\\
+
+\noindent\textbf{Aclaraciones}\\
 
 Una aclaracion pertinente de los diagramas de actividad es lo referente al abuso de notación en lo que refiere a la cardinalidad de los presidentes de mesa y de los votantes. En particular, como se podrá ver en el diagrama que habla del momento previo a la votaci\'on, donde se preparan todos los elementos que componen la infraestructura base para llevar a cabo la votaci\'on, hay descripto en actividades un \'unico inicio de la votaci\'on por parte de un un único presidente de mesa (como se vio en el caso de uso, cada presidente de mesa abre su correspondiente habilitando la m\'aquina de sufragios asociada). Por cuestiones de simplicidad, asumimos que ese flujo de actividades no corresponde únicamente a un solo presidente de mesa, sino a todos ellos.
 
@@ -857,6 +892,13 @@ Una aclaracion pertinente de los diagramas de actividad es lo referente al abuso
                 \footnotesize\textit{Diagrama de Actividad durante la votación}
         \end{center}
 \vspace{\baselineskip}
+
+
+\noindent\textbf{Trazabilidad}\\
+
+Este diagrama se relaciona con los casos de uso de \textit{Votando candidatos(1), Imprimiendo boleta(2), Ingresando número de mesa(8), Autenticándose como presidente de mesa(9), Consultando candidatos(13)}.\\
+
+\noindent\textbf{Aclaraciones}\\
 
 \par 
 A su vez, ocurre lo mismo con los votantes que llegan a las diferentes mesas: para representar el flujo de un votante/auditor que viene a votar/auditar anunciandose en la m\'aquina nos limitamos a mostrar el flujo de un \'unico votante/auditor y generalizarlo para todos ellos; para simplificar el gr\'afico y porque no aporta nada intentar demostrar que la cardinalidad es superior a uno para estos conjuntos de actores en un diagrama de actividad. 
@@ -879,28 +921,39 @@ Con las siguientes 3 máquinas de estados queremos mostrar la sincronización de
                 \footnotesize\textit{}
         \end{center}
 \vspace{\baselineskip}
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama FSM se relaciona con el FSM de \textit{Servidor Local}.\\
 
 \subsubsection{Servidor Local}
 
 \vspace{\baselineskip}
     \begin{center}
-                \includegraphics[scale=0.75, page=1]{imagenes/fsm/FSMServidorLocal.pdf}
+                \includegraphics[scale=0.70, page=1]{imagenes/fsm/FSMServidorLocal.pdf}
                 \\
                 \vspace{1pt}
                 \footnotesize\textit{}
         \end{center}
 \vspace{\baselineskip}
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama FSM se relaciona con los FSM de \textit{Centro Nacional de Cómputo y Máquina de Sufragio}.\\
 
 \subsubsection{Máquina de Sufragio}
 
 \vspace{\baselineskip}
     \begin{center}
-                \includegraphics[scale=0.75, page=1]{imagenes/fsm/FSMMaquinaEmisoradeSufragios.pdf}
+                \includegraphics[scale=0.65, page=1]{imagenes/fsm/FSMMaquinaEmisoradeSufragios.pdf}
                 \\
                 \vspace{1pt}
                 \footnotesize\textit{}
         \end{center}
 \vspace{\baselineskip}
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama se relaciona con los casos de uso \textit{Votando candidatos(1), Imprimiendo boleta(2), Abriendo comicios(5), Cerrando comicios(6), Ingresando resultados(7), Consultando resultados(12) y Consultando candidatos(13)} y con el FSM de \textit{Servidor Local}.\\
+
+\clearpage
+
+\noindent\textbf{Aclaraciones}\\
+
 En las máquinas de estado no se detalló como se realizan las auditorias y las consultas en las máquinas ya que dichos eventos los podemos ver en el gráfico de casos de usos donde se encuentran sus explicaciones sobre como se realizan mediante una boleta especial.
 Otra aclaración más sobre este diagrama es que suponemos que puede llegar a ocurrir que una ráfaga de votos electrónicos de un servidor llegue luego de un conteo manual de otro servidor. Suponemos que puede ocurrir ya que un servidor puede demorar en enviar su última ráfaga de votos electrónicos debido a problemas técnicos o que momentaneamente se quede sin servicio de WIFI el colegio en cuestión y por otro lado existen colegios donde tienen una muy baja cantidad de habitantes por lo que provoca un rápido conteo manual de los votos. Si ambos escenarios se dan en un mismo momento entonces puede ocurrir dicho caso. Sin embargo a la vez suponemos que el arreglo de dicho conflicto se realice dentro de las 2hs para poder cumplir con el objetivo de que los resultados de las elecciones se presenten en un plazo corto de tiempo.
 \subsubsection{Centro Nacional de Cómputo (proveedor de Página Web}
@@ -912,6 +965,8 @@ Otra aclaración más sobre este diagrama es que suponemos que puede llegar a oc
                 \footnotesize\textit{}
         \end{center}
 \vspace{\baselineskip}
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama se relaciona con el caso de uso de \textit{Actualizando resultados(3)} y con el FSM de \textit{Página Web (consumidor de CCN)}.\\
 
 \subsubsection{Página Web (Consumidor de CCN)}
 \vspace{\baselineskip}
@@ -922,6 +977,11 @@ Otra aclaración más sobre este diagrama es que suponemos que puede llegar a oc
                 \footnotesize\textit{}
         \end{center}
 \vspace{\baselineskip}
+\vspace{-10px}
+\noindent\textbf{Trazabilidad}: Este diagrama se relaciona con el caso de uso de \textit{Actualizando resultados(3)} y con el FSM de \textit{Centro Nacional de Computo(proveedor de Página Web)}.\\
+
+\noindent\textbf{Aclaraciones}\\
+
 En estas ultimas dos maquinas FSM, mostramos la sincronizacion que existe entre la pagina web y la CCN. La pagina web podra consultar a partir de las 18 horas y cada 15 minutos los resultados parciales para actualizar la informacion. De esta manera la pagina web se mantendra actualizada para ofrecer, a cualquiera que lo solicite, los resultados parciales que eventualmente seran totales cuando se termine de contar los votos desde el CCN.
 \par 
 \section{Discusión}
