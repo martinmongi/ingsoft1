@@ -56,6 +56,23 @@
 	\maketitle
 }
 	
+\section{Introducción}
+	El Ministro de Gobierno quiere modificar el Sistema Electoral Nacional y para ello propone instalar en las escuelas máquinas emisoras de sufragios. Junto con esta incorporación se deberá modificar el Sistema del Centro de Cómputos Nacional para que pueda operar con las máquinas.
+
+	El formato de la votación no presenta cambios, es decir, al igual que en el sistema de boletas que se venía utilizando se permitirá votar por categorías o votar en blanco. 
+	
+	Además se busca proveer todos los mecanimos necesarios para asegurar el derecho de voto a todos los Electores. Se considerarán las necesidades de los no videntes y personas con movilidad reducida.
+	
+\subsection{Técnicas de Especificación}
+
+En este Trabajo Práctico, se nos pide especificar varios aspectos de el Sistema que pretendemos construir:
+\vspace{-2em}
+\paragraph{Diagrama de contexto:} Un diagrama de contexto es una vista del sistema en la cual se especifican todas las interacciones que el Sistema debe tener con todos los agentes exteriores al mismo. El diagrama es un multigrafo dirigido, en el cual uno de los nodos es el sistema y el resto son los agentes que interactuarán con este. Las interacciones son representadas por los ejes dirigidos del mismo, los cuales se etiquetan con la acción que representan. Es útil para ver todas las acciones que uno debiera preveer e implementar en el Sistema, y también ver que interacciones no pertenecen al Sistema y por ende no es necesaria su implementación. Es importante destacar que este tipo de vista no provee información sobre el funcionamiento interno del Sistema, ya que se trata de una vista de alto nivel.
+\paragraph{Diagrama de objetivos:} Un diagrama de objetivos es una vista en el sistema en la cual se especifican los objetivos del Sistema en todos sus niveles. En este diagrama, se empieza con un nodo raíz, que es el objetivo duro general a satisfacer, y se van refinando estos objetivos. Estos refinamientos pueden ser de dos tipos: o-refinamiento e y-refinamiento. El primero modela un objetivo para el cual se necesita que todos los objetivos que contribuyen a este se cumplan para cumplirse. El segundo modela un objetivos para el cual con que se cumpla uno de los subobjetivos que contribuyen a este se cumpla para cumplirse. Este último cobra relevancia con el agregado de los objetivos blandos. Los objetivos son blandos cuando sólo es posible establecer un orden entre dos o más alternativas. Un ejemplo de esto sería cuando se desea que un Sistema sea barato: el costo de un Sistema sólo puede usarse para comparar dos o más alternativas. Los o-refinamientos permiten en este caso, explicar las diferentes alternativas de implementación con sus pros y contras. Finalmente, cuando se ha conseguido un refinamiento en los objetivos operacionales y el diagrama tiene la granularidad necesaria, se asigna cada objetivo a un agente externo o al Sistema a implementar. De esta forma, es mucho más fácil designar que es un requerimiento del Sistema y que es un objetivo en el que influirá un agente externo.
+\vspace{1em}
+
+También, se nos pidió efectuar una especificación informal de los escenarios de uso del Sistema. De esta forma, se explica a alto nivel, como el futuro usuario debera interactuar con el Sistema.
+	
 \section{Requerimientos}
 \begin{itemize}
 \item Lograr que el CCN almcene internamente conteos parciales y totales.
